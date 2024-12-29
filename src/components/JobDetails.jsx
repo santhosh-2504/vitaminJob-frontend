@@ -51,6 +51,14 @@ const JobDetails = () => {
         return;
       }
 
+      // Check if already applied
+      if (appliedJobs.includes(jobId)) {
+        toast.error("You have already applied for this job");
+        // Still open the application link if they want to check it
+        window.open(singleJob.applyLink, '_blank');
+        return;
+      }
+
       // Save current scroll position
       localStorage.setItem('jobsScrollPosition', window.scrollY.toString());
       
