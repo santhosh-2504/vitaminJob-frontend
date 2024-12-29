@@ -79,7 +79,7 @@ const jobSlice = createSlice({
 export const fetchJobs = (city, niche, searchKeyword = "", page = 1) => async (dispatch) => {
   try {
     dispatch(jobSlice.actions.requestForAllJobs());
-    let link = "http://localhost:4000/api/v1/job/getall?";
+    let link = "https://www.backend.vitaminjob.com/api/v1/job/getall?";
     let queryParams = [`page=${page}`];
 
     if (searchKeyword) {
@@ -106,7 +106,7 @@ export const fetchSingleJob = (jobId) => async (dispatch) => {
   dispatch(jobSlice.actions.requestForSingleJob());
   try {
     const response = await axios.get(
-      `http://localhost:4000/api/v1/job/get/${jobId}`,
+      `https://www.backend.vitaminjob.com/api/v1/job/get/${jobId}`,
       { withCredentials: true }
     );
     dispatch(jobSlice.actions.successForSingleJob(response.data.job));
@@ -132,7 +132,7 @@ export const applyForJob = (jobId) => async (dispatch, getState) => {
 
     dispatch(jobSlice.actions.applyJobRequest());
     await axios.post(
-      `http://localhost:4000/api/v1/job/apply/${jobId}`,
+      `https://www.backend.vitaminjob.com/api/v1/job/apply/${jobId}`,
       {},
       { withCredentials: true }
     );

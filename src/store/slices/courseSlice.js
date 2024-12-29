@@ -49,7 +49,7 @@ const courseSlice = createSlice({
 export const fetchCourses = (niche, searchKeyword = "", page = 1) => async(dispatch) => {
     dispatch(courseSlice.actions.getAllCoursesRequest());
     try{
-        let url = `http://localhost:4000/api/v1/course/course/all?page=${page}`;
+        let url = `https://www.backend.vitaminjob.com/api/v1/course/course/all?page=${page}`;
 
         if(searchKeyword){
             url += `&keyword=${searchKeyword}`;

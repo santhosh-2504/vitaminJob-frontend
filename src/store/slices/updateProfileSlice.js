@@ -53,7 +53,7 @@ export const updateProfile = (data) => async (dispatch) => {
     console.log("Profile Update Payload:", payload);
 
     const response = await axios.put(
-      "http://localhost:4000/api/v1/user/update/profile",
+      "https://www.backend.vitaminjob.com/api/v1/user/update/profile",
       payload,
       {
         withCredentials: true,
@@ -79,7 +79,7 @@ export const updatePassword = (data) => async (dispatch) => {
   try {
     // eslint-disable-next-line no-unused-vars
     const response = await axios.put(
-      "http://localhost:4000/api/v1/user/update/password",
+      "https://www.backend.vitaminjob.com/api/v1/user/update/password",
       data,
       {
         withCredentials: true,

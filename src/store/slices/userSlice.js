@@ -145,7 +145,7 @@ export const register = (data) => async (dispatch) => {
   dispatch(userSlice.actions.registerRequest());
   try {
     const response = await axios.post(
-      "http://localhost:4000/api/v1/user/register",
+      "https://www.backend.vitaminjob.com/api/v1/user/register",
       data,
       {
         withCredentials: true,
@@ -164,7 +164,7 @@ export const login = (data) => async (dispatch) => {
   dispatch(userSlice.actions.loginRequest());
   try {
     const response = await axios.post(
-      "http://localhost:4000/api/v1/user/login",
+      "https://www.backend.vitaminjob.com/api/v1/user/login",
       data,
       {
         withCredentials: true,
@@ -182,7 +182,7 @@ export const getUser = () => async (dispatch) => {
   dispatch(userSlice.actions.fetchUserRequest());
   try {
     const response = await axios.get(
-      "http://localhost:4000/api/v1/user/getuser",
+      "https://www.backend.vitaminjob.com/api/v1/user/getuser",
       {
         withCredentials: true,
       }
@@ -196,7 +196,7 @@ export const getUser = () => async (dispatch) => {
 export const logout = () => async (dispatch) => {
   try {
     const response = await axios.get(
-      "http://localhost:4000/api/v1/user/logout",
+      "https://www.backend.vitaminjob.com/api/v1/user/logout",
       {
         withCredentials: true,
       }
@@ -211,7 +211,7 @@ export const addBookmark = (jobId) => async (dispatch) => {
   try {
     // Send jobId as a query parameter in the request
     await axios.post(
-      `http://localhost:4000/api/v1/user/bookmarks/add?jobId=${jobId}`,
+      `https://www.backend.vitaminjob.com/api/v1/user/bookmarks/add?jobId=${jobId}`,
       {},
       { withCredentials: true }
     );
@@ -228,7 +228,7 @@ export const removeBookmark = (jobId) => async (dispatch) => {
   try {
     // Pass jobId as a query parameter
     await axios.delete(
-      `http://localhost:4000/api/v1/user/bookmarks/remove?jobId=${jobId}`,
+      `https://www.backend.vitaminjob.com/api/v1/user/bookmarks/remove?jobId=${jobId}`,
       { withCredentials: true }
     );
 
@@ -242,7 +242,7 @@ export const addStar = (roadmapId) => async (dispatch) => {
   try {
     // Send roadmapId as a query parameter in the request
     await axios.post(
-      `http://localhost:4000/api/v1/user/roadmaps/add?roadmapId=${roadmapId}`,
+      `https://www.backend.vitaminjob.com/api/v1/user/roadmaps/add?roadmapId=${roadmapId}`,
       {},
       { withCredentials: true }
     );
@@ -259,7 +259,7 @@ export const removeStar = (roadmapId) => async (dispatch) => {
   try {
     // Pass roadmapId as a query parameter
     await axios.delete(
-      `http://localhost:4000/api/v1/user/roadmaps/remove?roadmapId=${roadmapId}`,
+      `https://www.backend.vitaminjob.com/api/v1/user/roadmaps/remove?roadmapId=${roadmapId}`,
       { withCredentials: true }
     );
 
@@ -274,7 +274,7 @@ export const downloadRoadmap = (roadmapId, filename) => async (dispatch) => {
   dispatch(userSlice.actions.downloadRoadmapRequest());
   try {
     const response = await axios.get(
-      `http://localhost:4000/api/v1/user/roadmap/download/${roadmapId}`,
+      `https://www.backend.vitaminjob.com/api/v1/user/roadmap/download/${roadmapId}`,
       {
         withCredentials: true,
       }
@@ -296,7 +296,7 @@ export const deleteAccount = (password) => async (dispatch) => {
   dispatch(userSlice.actions.deleteAccountRequest());
   try {
       const response = await axios.delete(
-          "http://localhost:4000/api/v1/user/delete",
+          "https://www.backend.vitaminjob.com/api/v1/user/delete",
           {
               data: { password },
               withCredentials: true,

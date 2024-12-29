@@ -89,7 +89,7 @@ export const startQuiz = (quizId) => async (dispatch) => {
     dispatch(quizTakingSlice.actions.startQuizRequest());
     try {
         const response = await axios.get(
-            `http://localhost:4000/api/v1/quiz/${quizId}/start`,
+            `https://www.backend.vitaminjob.com/api/v1/quiz/${quizId}/start`,
             { withCredentials: true }
         );
         

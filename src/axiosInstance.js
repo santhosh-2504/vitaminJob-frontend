@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const axiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_BACKEND_URL || 'http://localhost:4000',
-  withCredentials: true, // Include cookies for authentication if needed
+const instance = axios.create({
+  baseURL: import.meta.env.VITE_BACKEND_URL || 'https://www.backend.vitaminjob.com',
+  withCredentials: true,
 });
 
-export default axiosInstance;
+export default instance;

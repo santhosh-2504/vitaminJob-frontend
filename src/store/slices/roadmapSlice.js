@@ -46,7 +46,7 @@ const roadmapSlice = createSlice({
 export const fetchRoadmaps = (niche, searchKeyword = "", page = 1) => async (dispatch) => {
   dispatch(roadmapSlice.actions.getAllRoadmapsRequest());
   try {
-    let url = `http://localhost:4000/api/v1/roadmap/roadmap/all?page=${page}`;
+    let url = `https://www.backend.vitaminjob.com/api/v1/roadmap/roadmap/all?page=${page}`;
     
     if (searchKeyword) {
       url += `&keyword=${searchKeyword}`;

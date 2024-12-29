@@ -30,7 +30,7 @@ const starredRoadmapSlice = createSlice({
 export const fetchStarredRoadmaps = () => async (dispatch) => {
   try {
     dispatch(starredRoadmapSlice.actions.requestStarredRoadmaps());
-    const response = await axios.get("http://localhost:4000/api/v1/roadmap/starred-roadmaps", {
+    const response = await axios.get("https://www.backend.vitaminjob.com/api/v1/roadmap/starred-roadmaps", {
       withCredentials: true,
     });
     dispatch(starredRoadmapSlice.actions.successStarredRoadmaps(response.data.starredRoadmaps));

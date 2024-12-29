@@ -30,7 +30,7 @@ const bookmarkSlice = createSlice({
 export const fetchBookmarkedJobs = () => async (dispatch) => {
   try {
     dispatch(bookmarkSlice.actions.requestBookmarkedJobs());
-    const response = await axios.get("http://localhost:4000/api/v1/job/bookmarked-jobs", {
+    const response = await axios.get("https://www.backend.vitaminjob.com/api/v1/job/bookmarked-jobs", {
       withCredentials: true,
     });
     dispatch(bookmarkSlice.actions.successBookmarkedJobs(response.data.bookmarkedJobs));

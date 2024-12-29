@@ -66,7 +66,7 @@ const quizSlice = createSlice({
 export const fetchQuizzes = (niche, searchKeyword = "", page  =1) => async(dispatch)=> {
     dispatch(quizSlice.actions.getAllQuizzesRequest());
     try{
-        let url = `http://localhost:4000/api/v1/quiz/quizzes/all?page=${page}`; // matches router path;
+        let url = `https://www.backend.vitaminjob.com/api/v1/quiz/quizzes/all?page=${page}`; // matches router path;
         if(searchKeyword){
             url += `&keyword=${searchKeyword}`;
         }
@@ -96,7 +96,7 @@ export const fetchSingleQuiz = (quizId) => async(dispatch) => {
 
     try{
         const response = await axios.get(
-            `http://localhost:4000/api/v1/quiz/get/${quizId}`,
+            `https://www.backend.vitaminjob.com/api/v1/quiz/get/${quizId}`,
             {withCredentials : true}
         );
         dispatch(quizSlice.actions.successForSingleQuiz(response.data.quiz));
