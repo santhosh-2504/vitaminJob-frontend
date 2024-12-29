@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const FeatureCard = ({ icon: Icon, title, description }) => (
   <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 transform transition-transform duration-300 hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-700">
-    <div className="text-orange-500 text-4xl mb-4 flex justify-center">
+    <div className="text-blue-500 text-4xl mb-4 flex justify-center">
       <Icon className="w-8 h-8" />
     </div>
     <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 text-center">
@@ -42,7 +42,7 @@ const Hero = ({ className = '' }) => {
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Vitamin Job
           </h1>
-          <h2 className="text-3xl sm:text-4xl font-bold text-orange-500 dark:text-orange-400 mb-6">
+          <h2 className="text-3xl sm:text-4xl font-bold text-blue-500 dark:text-blue-400 mb-6">
             Your Daily Dose of Career Growth
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
@@ -53,7 +53,7 @@ const Hero = ({ className = '' }) => {
             <div className="flex justify-center mb-12">
               <Link
                 to="/login"
-                className="px-8 py-4 text-xl font-medium text-white bg-orange-500 hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-700 rounded-lg shadow-md transition-all duration-300 flex items-center gap-2 group"
+                className="px-8 py-4 text-xl font-medium text-white bg-blue-500 hover:bg-blue -600 dark:bg-blue-600 dark:hover:bg-blue-700 rounded-lg shadow-md transition-all duration-300 flex items-center gap-2 group"
               >
                 Get Your Daily Dose
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
