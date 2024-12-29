@@ -2,35 +2,30 @@ import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { MdLocationOn, MdWork, MdAttachMoney, MdLabel } from "react-icons/md";
-import { fetchSingleJob, applyForJob } from "../store/slices/jobSlice";
+import { fetchSingleJob } from "../store/slices/jobSlice";
 import Spinner from "../components/Spinner";
 import { FaExternalLinkAlt, FaArrowLeft } from "react-icons/fa";
-import { toast } from "react-toastify";
 
 
 const JobDetails = () => {
   const { jobId } = useParams();
   const dispatch = useDispatch();
-  const { singleJob, loading, error, appliedJobs } = useSelector((state) => state.jobs);
+  const { singleJob, loading, error } = useSelector((state) => state.jobs);
   const navigate = useNavigate();
-  const { isAuthenticated } = useSelector((state) => state.user);
 
-  // Separate useEffect for fetch and scroll
   useEffect(() => {
     dispatch(fetchSingleJob(jobId));
   }, [dispatch, jobId]);
 
-  // Separate useEffect for scroll behavior
   useEffect(() => {
     document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0; // For Safari
+    document.body.scrollTop = 0;
   }, []);
 
   const handleBack = () => {
     navigate(-1);
   };
 
-  // Restore scroll position when returning to jobs list
   useEffect(() => {
     return () => {
       const savedScrollPosition = localStorage.getItem('jobsScrollPosition');
@@ -43,35 +38,9 @@ const JobDetails = () => {
     };
   }, []);
 
-  const handleApply = async () => {
-    try {
-      if (!isAuthenticated) {
-        toast.error("Please login to apply");
-        navigate('/login');
-        return;
-      }
-
-      // Check if already applied
-      if (appliedJobs.includes(jobId)) {
-        toast.error("You have already applied for this job");
-        // Still open the application link if they want to check it
-        window.open(singleJob.applyLink, '_blank');
-        return;
-      }
-
-      // Save current scroll position
-      localStorage.setItem('jobsScrollPosition', window.scrollY.toString());
-      
-      // Apply for job
-      await dispatch(applyForJob(jobId));
-      
-      toast.success("Successfully applied for the job!");
-      
-      // Open application link
-      window.open(singleJob.applyLink, '_blank');
-    } catch (error) {
-      toast.error(error.message || "Failed to apply for job");
-    }
+  const handleApply = () => {
+    // Simply open the application link
+    window.open(singleJob.applyLink, '_blank');
   };
 
   if (loading) {
@@ -187,7 +156,7 @@ const JobDetails = () => {
           </div>
         </div>
 
-        {/* Apply Button */}
+        {/* Apply Button - simplified version */}
         <div className="text-center mt-6">
           <button
             onClick={handleApply}
@@ -196,13 +165,6 @@ const JobDetails = () => {
             Apply Now
             <FaExternalLinkAlt className="ml-2 w-4 h-4" />
           </button>
-          {appliedJobs.includes(jobId) && (
-            <div className="mt-2">
-              <span className="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">
-                You have already applied for this job
-              </span>
-            </div>
-          )}
         </div>
       </div>
     </div>
