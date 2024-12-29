@@ -135,21 +135,21 @@ const Navbar = () => {
                   className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
                   onClick={() => setShow(false)}
                 >
-                  Roadmaps
+                  ROADMAPS
                 </Link>
                 <Link 
                   to="/courses"
                   className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
                   onClick={() => setShow(false)}
                 >
-                  Courses
+                  COURSES
                 </Link>
                 <Link 
                   to="/quizzes"
                   className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
                   onClick={() => setShow(false)}
                 >
-                  Quizzes
+                  QUIZZES
                 </Link>
                 {/* <Link 
                   to="/posts"
