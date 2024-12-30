@@ -220,10 +220,44 @@ const Register = () => {
           {/* Password Requirements */}
           <PasswordRequirements />
 
-          {/* Rest of the form remains the same */}
-          <p className="text-sm">
-  By signing up, you agree to our <Link to="/privacy-policy">Privacy Policy</Link>
-</p>
+          {/* Checkboxes for Terms and Age Verification */}
+          <div className="space-y-3">
+            <div className="flex items-start">
+              <div className="flex items-center h-5">
+                <input
+                  id="age-verify"
+                  type="checkbox"
+                  className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600"
+                  required
+                />
+              </div>
+              <label htmlFor="age-verify" className="ml-2 text-sm text-gray-600 dark:text-gray-300">
+                I confirm that I am at least 16 years old
+              </label>
+            </div>
+
+            <div className="flex items-start">
+              <div className="flex items-center h-5">
+                <input
+                  id="terms"
+                  type="checkbox"
+                  className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600"
+                  required
+                />
+              </div>
+              <label htmlFor="terms" className="ml-2 text-sm text-gray-600 dark:text-gray-300">
+                I agree to the{" "}
+                <Link to="/terms-of-service" className="text-blue-600 hover:underline dark:text-blue-500">
+                  Terms of Service
+                </Link>{" "}
+                and{" "}
+                <Link to="/privacy-policy" className="text-blue-600 hover:underline dark:text-blue-500">
+                  Privacy Policy
+                </Link>
+              </label>
+            </div>
+          </div>
+
           {/* Submit Button */}
           <button
             type="submit"
