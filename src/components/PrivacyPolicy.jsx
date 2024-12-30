@@ -3,6 +3,10 @@ import { useEffect } from 'react';
 const PrivacyPolicy = () => {
   const sections = [
     {
+      title: "Welcome to Vitamin Job",
+      content: "Your privacy is of utmost importance to us. This Privacy Policy outlines how we collect, use, store, and protect your personal data when you use our website. By accessing or using our services, you agree to this Privacy Policy."
+    },
+    {
       title: "Eligibility",
       content: "Our website is not intended for users under the age of 16. During registration, users must confirm that they are at least 16 years old by checking a required checkbox."
     },
