@@ -18,7 +18,6 @@ import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsOfService from "./components/TermsOfService";
 import Roadmaps from "./pages/Roadmaps";
 import Courses from "./pages/Courses";
-import Donate from "./pages/Donate";
 import QuizPage from "./pages/QuizPage";
 import QuizDetails from "./components/QuizDetails";
 import TakeQuiz from "./components/TakeQuiz";
@@ -121,7 +120,6 @@ const App = () => {
           <Route path="/terms" element={<TermsOfService/>} />
           <Route path="/roadmaps" element={<Roadmaps/>} />
           <Route path="/courses" element={<Courses/>} />
-          <Route path="/donate" element={<Donate />} />
           <Route path="/quizzes" element={<QuizPage />} />
           <Route path="/quiz/:id" element={<QuizDetails/>}/>
           <Route path="/quiz/:id/start" element={<TakeQuiz/>}/>
