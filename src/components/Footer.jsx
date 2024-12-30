@@ -120,7 +120,7 @@ const Footer = () => {
               {[
 
                 { icon: FaSquareInstagram, label: "Instagram" , url:"https://www.instagram.com/vitaminjob2024/profilecard/?igsh=MWRsMjQ1azFhbXZtMQ=="},
-                { icon: FaSquareWhatsapp, label: "WhatsApp" , url :"https://whatsapp.com/channel/0029VavtlB5GzzKUOgLUaE3K"},
+                { icon: FaSquareWhatsapp, label: "WhatsApp" , url :"https://chat.whatsapp.com/Jcvi1ScKimw4D6QHwB8bJl"},
 
                 { icon: FaLinkedin, label: "LinkedIn" },
               
