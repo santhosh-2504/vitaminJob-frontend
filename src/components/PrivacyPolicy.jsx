@@ -1,131 +1,92 @@
-import  { useEffect } from 'react';
+import { useEffect } from 'react';
 
 const PrivacyPolicy = () => {
   const sections = [
     {
-      title: "Introduction",
-      content: "At VitaminJob, we value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you use our website."
+      title: "Eligibility",
+      content: "Our website is not intended for users under the age of 16. During registration, users must confirm that they are at least 16 years old by checking a required checkbox."
     },
     {
       title: "Information We Collect",
-      content: `We collect the following information:
-
-Required Information:
-• Email address - Used for account creation and authentication
-• Phone number - Used for account security and future SMS verification
+      content: `Mandatory Information:
+• Email: Used solely for login purposes and to ensure account uniqueness.
+• Password: Stored securely using hashing algorithms.
+• Phone Number: Currently unused but planned for a future "Forgot Password" feature involving SMS or WhatsApp notifications.
 
 Optional Information:
-• Address
-• Professional niche/interests
-• Other profile details
-
-This information is collected only when you voluntarily provide it during registration or when updating your profile in the Dashboard.`
+• Address: Collected for user personalization and stored in the dashboard. It has no immediate use.
+• Niche Preferences: Users can select up to three niches to receive future job-related emails if opted in.`
     },
     {
       title: "How We Use Your Information",
-      content: `We use your information for:
-• Account creation and management
-• Authentication and security
-• Communication regarding your account
-• Future SMS verification for password reset and account deletion (planned feature)
-• Marketing emails (only if you opt-in during registration)
-
-Optional information like address and niche are currently stored but not actively used in our services.`
-    },
-    {
-      title: "Data Storage and Security",
-      content: `Your data is securely stored in our MongoDB database. We retain your data for as long as your account remains active. Upon account deletion, all associated data is permanently removed from our systems.
-
-[RECOMMENDED ADDITION - Security Measures]:
-• Data encryption in transit and at rest
-• Regular security audits
-• Limited staff access to personal data
-• Regular backup procedures`
-    },
-    {
-      title: "Cookies and Authentication",
-      content: `We use essential cookies for authentication purposes:
-• JWT (JSON Web Token) cookies for secure user sessions
-• Token expiration: 7 days
-• These cookies are mandatory for site functionality
-
-[RECOMMENDED ADDITION - Cookie Consent]:
-Consider implementing a cookie consent banner that explains:
-• Essential cookies cannot be rejected as they're required for site functionality
-• Future analytical cookies (if implemented) can be optional`
-    },
-    {
-      title: "Third-Party Services",
-      content: `We use the following third-party services:
-• Razorpay for payment processing
-• Render for backend hosting
-• Vercel for frontend hosting
-
-These services may collect additional information according to their own privacy policies.
-
-[FUTURE ADDITION]:
-• Google Analytics (planned implementation)
-When implemented, this section will be updated with details about data collection and usage.`
-    },
-    {
-      title: "Age Restrictions",
-      content: `[RECOMMENDED POLICY]:
-This website is intended for users who are 18 years or older. We do not knowingly collect information from individuals under the age of 18. If you are under 18, please do not create an account or provide any personal information.`
-    },
-    {
-      title: "International Users and GDPR",
-      content: `[RECOMMENDED POLICY]:
-Our services are accessible worldwide. For users from the European Union (EU), we are committed to complying with the General Data Protection Regulation (GDPR).
-
-Under GDPR, you have the right to:
-• Access your personal data
-• Correct inaccurate personal data
-• Request deletion of your personal data
-• Object to processing of your personal data
-• Data portability
-
-[DECISION NEEDED]: Full GDPR compliance implementation strategy`
-    },
-    {
-      title: "Data Breaches",
-      content: `[RECOMMENDED POLICY]:
-In the event of a data breach that affects your personal information, we will:
-• Notify affected users via email within 72 hours
-• Provide information about what data was compromised
-• Explain steps taken to address the breach
-• Outline measures implemented to prevent future breaches`
+      content: `• Email: For account login and verification.
+• Phone Number: Planned for account recovery in the future.
+• Niche Preferences: To send job-related emails based on user consent when relevant jobs are added.
+• Optional Data (e.g., Address): Stored for personalization but not actively used.`
     },
     {
       title: "User Rights",
-      content: `You have the right to:
-• Access your personal data through your Dashboard
-• Update your information at any time
-• Delete your account and associated data
-• Opt-out of marketing communications
+      content: `Update Profile:
+• Users can update their profile information through the "Update Profile" section in the dashboard, except for their email address (used for login purposes).
 
-All data deletion requests are permanent and cannot be reversed.`
+Delete Account:
+• Users can delete their accounts through the "Delete Account" option in the dashboard. Upon deletion, all user data is permanently removed from our database without recovery.`
     },
     {
-      title: "Contact Information",
-      content: `For privacy-related concerns:
-• Email: placeholder@gmail.com
-• Use our website's feedback section
-
-[RECOMMENDED ADDITION]:
-• Dedicated privacy contact form
-• Response time expectations
-• Process for escalating privacy concerns`
+      title: "Data Retention Policy",
+      content: `• We retain user data as long as the account remains active.
+• If a user deletes their account, all associated data is permanently deleted immediately.
+• Currently, no backups are maintained. If backups are implemented in the future, deleted user data will also be removed from backups within a reasonable period.`
     },
     {
-      title: "Updates to Privacy Policy",
-      content: `We may update this Privacy Policy as needed. Users will be notified of significant changes through:
-• Website notifications
-• Alerts
-• Prompts
-
-Continued use of the website after such notifications constitutes acceptance of the updated policy.`
+      title: "Data Sharing and Third Parties",
+      content: `• We do not share user data with any third parties.
+• Razorpay transactions are securely processed, and payment data (e.g., UPI ID) is stored in Razorpay's dashboard for legal and financial purposes.`
+    },
+    {
+      title: "Cookies and Analytics",
+      content: `• Currently, we do not use cookies or analytics tools.
+• If Google Analytics or similar tools are implemented in the future, we will notify users through a banner or scrolling message under the navbar and update this Privacy Policy.`
+    },
+    {
+      title: "Notifications and Emails",
+      content: `• Users must provide explicit consent to receive marketing or job-related emails.
+• Users can opt-out of receiving emails at any time.
+• Job-related emails will only be sent based on niche preferences selected by the user.`
+    },
+    {
+      title: "Data Security",
+      content: `• Passwords are securely hashed before storage.
+• JWT-based authentication is used for secure access, and HTTP-only cookies store tokens.
+• Secure HTTPS API calls are enforced.`
+    },
+    {
+      title: "Data Breach Protocol",
+      content: `While we take extensive measures to secure user data, in the event of a breach:
+• We will investigate the cause and take corrective actions.
+• Affected users will be promptly informed.`
+    },
+    {
+      title: "Inactivity and Account Deletion",
+      content: `• We do not track user activity or automatically delete inactive accounts.
+• Users have full control over deleting their accounts manually.`
+    },
+    {
+      title: "Links to External Sites",
+      content: `• Our website contains links to external sites (e.g., job applications, courses). We are not responsible for the privacy practices of these external sites.
+• If any external site linked on our website has concerns regarding the shared links, they can contact us via email. We will review and take appropriate actions as needed.`
+    },
+    {
+      title: "Future Updates",
+      content: `• Any updates to this Privacy Policy will be communicated through a banner or scrolling message under the navbar for 15-30 days.
+• Users are encouraged to review the updated policy.`
+    },
+    {
+      title: "Contact Us",
+      content: "For any privacy concerns or inquiries, users can contact us through our feedback form or directly via the email mentioned in the support section of our footer."
     }
   ];
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -140,7 +101,7 @@ Continued use of the website after such notifications constitutes acceptance of 
             </h1>
             
             <div className="text-gray-600 dark:text-gray-300 mb-8">
-              Last Updated: 23/12/2024
+              Effective Date: December 30, 2024
             </div>
 
             <div className="space-y-8">
