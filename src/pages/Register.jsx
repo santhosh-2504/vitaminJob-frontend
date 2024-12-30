@@ -253,7 +253,7 @@ const Register = () => {
               </div>
               <label htmlFor="terms" className="ml-2 text-sm text-gray-600 dark:text-gray-300">
                 I agree to the{" "}
-                <Link to="/terms-of-service" className="text-blue-600 hover:underline dark:text-blue-500">
+                <Link to="/terms" className="text-blue-600 hover:underline dark:text-blue-500">
                   Terms of Service
                 </Link>{" "}
                 and{" "}
