@@ -23,6 +23,9 @@ import QuizPage from "./pages/QuizPage";
 import QuizDetails from "./components/QuizDetails";
 import TakeQuiz from "./components/TakeQuiz";
 import FeedbackForm from "./components/FeedbackForm";
+import AboutUs from "./components/AboutUs";
+import ContactUs from "./components/ContactUs";
+import CancellationsAndRefunds from "./components/CancellationsAndRefunds";
 //import PostsPage from "./pages/PostsPage";
 //import SinglePost from "./pages/SinglePost";
 const ThemeContext = createContext();
@@ -123,6 +126,9 @@ const App = () => {
           <Route path="/quiz/:id" element={<QuizDetails/>}/>
           <Route path="/quiz/:id/start" element={<TakeQuiz/>}/>
           <Route path="/feedback" element={<FeedbackForm/>}/> 
+          <Route path="/about-us" element={<AboutUs/>}/>
+          <Route path="/contact-us" element={<ContactUs/>}/>
+          <Route path="/cancellations-and-refunds" element={<CancellationsAndRefunds/>}/>
           {/* <Route path="/posts" element={<PostsPage/>}/> */}
           {/* <Route path="/post/:id" element={<SinglePost/>}/> */}
           </Routes>

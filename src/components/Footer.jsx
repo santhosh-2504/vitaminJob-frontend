@@ -30,6 +30,30 @@ const Footer = () => {
             <ul className="space-y-2 text-gray-600 dark:text-gray-300">
               <li>Andhra Pradesh, India</li>
               <li>vitamin4job@gmail.com</li>
+              <li>
+                <Link
+                  to="/about-us"
+                  className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact-us"
+                  className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                >
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/cancellations-and-refunds"
+                  className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                >
+                  Cancellations and Refunds
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -99,6 +123,7 @@ const Footer = () => {
                   Terms of Service
                 </Link>
               </li>
+              
             </ul>
           </div>
 
