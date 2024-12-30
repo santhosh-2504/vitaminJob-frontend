@@ -43,7 +43,9 @@ You must not disrupt the platform's functionality or compromise the experience o
     {
       title: "Privacy",
       content: <span>
-        By using www.vitaminjob.com, you agree to the collection and use of your personal information as described in our <div className='inline'><Link to="/privacy-policy" >Privacy Policy</Link></div>. Please read our Privacy Policy to understand how we protect and manage your data.
+        By using www.vitaminjob.com, you agree to the collection and use of your personal information as described in our <Link to="/privacy-policy" className="text-blue-600 hover:underline dark:text-blue-500">
+                  Privacy Policy
+                </Link>. Please read our Privacy Policy to understand how we protect and manage your data.
       </span>
     },
     {

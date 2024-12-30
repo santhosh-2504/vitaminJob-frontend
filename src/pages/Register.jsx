@@ -16,6 +16,8 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [isAgeVerified, setIsAgeVerified] = useState(false);
+  const [isTermsAccepted, setIsTermsAccepted] = useState(false);
 
   // Password validation states
   const [passwordValidation, setPasswordValidation] = useState({
@@ -227,6 +229,8 @@ const Register = () => {
                 <input
                   id="age-verify"
                   type="checkbox"
+                  checked={isAgeVerified}
+                  onChange={(e) => setIsAgeVerified(e.target.checked)}
                   className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600"
                   required
                 />
@@ -241,6 +245,8 @@ const Register = () => {
                 <input
                   id="terms"
                   type="checkbox"
+                  checked={isTermsAccepted}
+                  onChange={(e) => setIsTermsAccepted(e.target.checked)}
                   className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600"
                   required
                 />
@@ -261,9 +267,9 @@ const Register = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            disabled={loading || !Object.values(passwordValidation).every(Boolean)}
+            disabled={loading || !Object.values(passwordValidation).every(Boolean) || !isAgeVerified || !isTermsAccepted}
             className={`w-full py-2 text-white font-medium rounded-md transition ${
-              loading || !Object.values(passwordValidation).every(Boolean)
+              loading || !Object.values(passwordValidation).every(Boolean) || !isAgeVerified || !isTermsAccepted
                 ? "bg-gray-400 cursor-not-allowed"
                 : "bg-blue-500 hover:bg-blue-600"
             }`}
