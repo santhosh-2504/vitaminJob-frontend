@@ -46,14 +46,6 @@ const Footer = () => {
                   Contact Us
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/cancellations-and-refunds"
-                  className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
-                >
-                  Cancellations and Refunds
-                </Link>
-              </li>
             </ul>
           </div>
 
