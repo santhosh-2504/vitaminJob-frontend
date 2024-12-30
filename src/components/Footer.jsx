@@ -30,7 +30,6 @@ const Footer = () => {
             <ul className="space-y-2 text-gray-600 dark:text-gray-300">
               <li>Andhra Pradesh, India</li>
               <li>vitamin4job@gmail.com</li>
-              <li>+91 </li>
             </ul>
           </div>
 
