@@ -140,7 +140,7 @@ Google Analytics:
             </h1>
             
             <div className="text-gray-600 dark:text-gray-300 mb-8">
-              Effective Date: December 30, 2024
+              Effective Date: December 31, 2024
             </div>
 
             <div className="space-y-8">
