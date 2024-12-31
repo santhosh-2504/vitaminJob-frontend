@@ -37,7 +37,7 @@ const initializeGA = () => {
     window.gtag("consent", "update", {
       analytics_storage: "granted"
     });
-    window.gtag("config", "G-X74E9KV4LF", {
+    window.gtag("config", "", {
       send_page_view: false,
       anonymize_ip: true
     });

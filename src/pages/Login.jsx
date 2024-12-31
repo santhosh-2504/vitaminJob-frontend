@@ -30,14 +30,17 @@ const Login = () => {
   };
 
   useEffect(() => {
+    if (isAuthenticated) {
+      navigateTo("/");
+    }
+  }, [isAuthenticated, navigateTo]);
+
+  useEffect(() => {
     if (error) {
       toast.error("Invalid Username or Password");
       dispatch(clearAllUserErrors());
     }
-    if (isAuthenticated) {
-      navigateTo("/");
-    }
-  }, [dispatch, error, isAuthenticated, navigateTo]);
+  }, [error, dispatch]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
