@@ -44,13 +44,48 @@ Delete Account:
     },
     {
       title: "Data Sharing and Third Parties",
-      content: `• We do not share user data with any third parties.
-• Razorpay transactions are securely processed, and payment data (e.g., UPI ID) is stored in Razorpay's dashboard for legal and financial purposes.`
+      content: `• We do not share user data with any third parties
+• We use Google Analytics with IP anonymization enabled
+• No personal data is used for advertising purposes`
     },
     {
       title: "Cookies and Analytics",
-      content: `• Currently, we do not use cookies or analytics tools.
-• If Google Analytics or similar tools are implemented in the future, we will notify users through a banner or scrolling message under the navbar and update this Privacy Policy.`
+      content: `We use cookies and similar technologies on our website for the following purposes:
+
+Essential Cookies:
+• Authentication: To keep you logged in and secure your session
+• Website Functionality: To remember your preferences and settings
+
+Analytics Cookies (Optional):
+• We use Google Analytics to understand how visitors interact with our website
+• This helps us improve our services and user experience
+• Analytics cookies collect information such as:
+  - Pages you visit
+  - Time spent on each page
+  - Technical information (browser type, device type)
+  - General location data (country/city level only)
+
+Cookie Consent:
+• We will ask for your explicit consent before setting non-essential cookies
+• You can change your cookie preferences at any time
+• If you decline analytics cookies, you can still use our website fully
+• Your cookie preferences are saved for 365 days
+
+Data Collection and Storage:
+• Analytics data is processed by Google Analytics
+• We have configured Google Analytics to anonymize IP addresses
+• Data is retained for a maximum of 26 months
+• We do not use cookies for advertising purposes`
+    },
+    {
+      title: "Third-Party Services",
+      content: `We use the following third-party service:
+
+Google Analytics:
+• Purpose: Website analytics and user experience improvement
+• Data Collected: Page views, session duration, navigation paths
+• Privacy Policy: https://policies.google.com/privacy
+• We have enabled IP anonymization and disabled data sharing for advertising`
     },
     {
       title: "Notifications and Emails",
@@ -72,7 +107,7 @@ Delete Account:
     },
     {
       title: "Inactivity and Account Deletion",
-      content: `• We do not track user activity or automatically delete inactive accounts.
+      content: `• We do not automatically delete inactive accounts.
 • Users have full control over deleting their accounts manually.`
     },
     {

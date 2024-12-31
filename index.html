@@ -5,6 +5,23 @@
     <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vitamin Job</title>
+    <!-- Google Analytics with Default Denied Consent -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X74E9KV4LF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      // Set default consent to denied
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied'
+      });
+      
+      // Initialize GA with your tracking ID
+      gtag('config', 'G-X74E9KV4LF', {
+        'send_page_view': false // Disable automatic page views
+      });
+    </script>
   </head>
   <body>
     <div id="root"></div>
