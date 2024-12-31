@@ -9,16 +9,19 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X74E9KV4LF"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() {
+        dataLayer.push(arguments);
+      }
       gtag('js', new Date());
-      
+
       // Set default consent to denied
       gtag('consent', 'default', {
         'analytics_storage': 'denied'
       });
-      
-      // Initialize GA with your tracking ID
+
+      // Initialize GA with your tracking ID and IP anonymization
       gtag('config', 'G-X74E9KV4LF', {
+          'anonymize_ip': true, // Ensure IP anonymization
         'send_page_view': false // Disable automatic page views
       });
     </script>

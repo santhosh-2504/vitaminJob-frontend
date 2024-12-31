@@ -38,7 +38,8 @@ const initializeGA = () => {
       analytics_storage: "granted"
     });
     window.gtag("config", "G-X74E9KV4LF", {
-      send_page_view: false
+      send_page_view: false,
+      anonymize_ip: true
     });
   }
 };
@@ -221,7 +222,8 @@ const App = () => {
               // Optional: Handle decline action
               if (window.gtag) {
                 window.gtag("consent", "update", {
-                  analytics_storage: "denied"
+                  analytics_storage: "denied",
+                  anonymize_ip: true
                 });
               }
             }}
@@ -235,6 +237,7 @@ const App = () => {
                   style={{ 
                     color: darkMode ? "#10b981" : "#059669",
                     textDecoration: "underline" 
+                    
                   }}
                 >
                   Privacy Policy
