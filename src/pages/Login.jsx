@@ -36,8 +36,8 @@ const Login = () => {
   }, [isAuthenticated, navigateTo]);
 
   useEffect(() => {
-    if (error) {
-      toast.error("Invalid Username or Password");
+    if (error && error !== "") {
+      toast.error(error);
       dispatch(clearAllUserErrors());
     }
   }, [error, dispatch]);
