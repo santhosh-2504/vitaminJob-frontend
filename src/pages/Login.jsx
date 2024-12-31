@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { clearAllUserErrors, login } from "../store/slices/userSlice";
+import { clearAllUserErrors, login, resetAuthErrors } from "../store/slices/userSlice";
 import { toast } from "react-toastify";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { RiLock2Fill } from "react-icons/ri";
@@ -12,16 +12,21 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const { loading, isAuthenticated, error } = useSelector(
-    (state) => state.user
-  );
+  // Only get loading and error from Redux state
+  const { loading, error } = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
   const navigateTo = useNavigate();
 
+  // Check authentication status only after successful login
+  const { isAuthenticated } = useSelector((state) => state.user);
+
   const handleLogin = (e) => {
     e.preventDefault();
-    // Instead of FormData, let's send a plain object since we're using JSON
+    if (!email || !password) {
+      toast.error("Please fill in all fields");
+      return;
+    }
     const loginData = {
       email,
       password
@@ -29,22 +34,27 @@ const Login = () => {
     dispatch(login(loginData));
   };
 
+  // Reset auth errors when component mounts
+  useEffect(() => {
+    dispatch(resetAuthErrors());
+    // Reset scroll position
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [dispatch]);
+
+  // Navigate after successful login
   useEffect(() => {
     if (isAuthenticated) {
       navigateTo("/");
     }
   }, [isAuthenticated, navigateTo]);
 
+  // Handle errors
   useEffect(() => {
-    if (error && error !== "") {
+    if (error) {
       toast.error(error);
       dispatch(clearAllUserErrors());
     }
   }, [error, dispatch]);
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  }, []);
 
   return (
     <section className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 px-4">
@@ -69,6 +79,7 @@ const Login = () => {
                 placeholder="youremail@gmail.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                required
                 className="flex-1 bg-transparent border-none focus:outline-none px-2 text-gray-900 dark:text-white"
               />
             </div>
@@ -90,6 +101,7 @@ const Login = () => {
                 placeholder="Your Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                required
                 className="flex-1 bg-transparent border-none focus:outline-none px-2 text-gray-900 dark:text-white"
               />
               <button
@@ -117,7 +129,7 @@ const Login = () => {
 
           {/* Register Link */}
           <p className="text-center mt-4 text-sm text-gray-600 dark:text-gray-400">
-            Don’t have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link
               to="/register"
               className="text-blue-500 dark:text-blue-400 hover:underline"

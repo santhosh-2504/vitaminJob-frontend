@@ -13,10 +13,8 @@ const userSlice = createSlice({
     downloadMessage: null,
   },
   reducers: {
-    registerRequest(state, action) {
+    registerRequest(state) {
       state.loading = true;
-      state.isAuthenticated = false;
-      state.user = {};
       state.error = null;
       state.message = null;
     },
@@ -34,10 +32,8 @@ const userSlice = createSlice({
       state.error = action.payload;
       state.message = null;
     },
-    loginRequest(state, action) {
+    loginRequest(state) {
       state.loading = true;
-      state.isAuthenticated = false;
-      state.user = {};
       state.error = null;
       state.message = null;
     },
@@ -50,15 +46,11 @@ const userSlice = createSlice({
     },
     loginFailed(state, action) {
       state.loading = false;
-      state.isAuthenticated = false;
-      state.user = {};
       state.error = action.payload;
       state.message = null;
     },
-    fetchUserRequest(state, action) {
+    fetchUserRequest(state) {
       state.loading = true;
-      state.isAuthenticated = false;
-      state.user = {};
       state.error = null;
     },
     fetchUserSuccess(state, action) {
@@ -69,78 +61,82 @@ const userSlice = createSlice({
     },
     fetchUserFailed(state, action) {
       state.loading = false;
-      state.isAuthenticated = false;
-      state.user = {};
-      state.error = action.payload;
+      // Only update these states if not on login/register pages
+      if (window.location.pathname !== '/login' && window.location.pathname !== '/register') {
+        state.isAuthenticated = false;
+        state.user = {};
+        state.error = action.payload;
+      }
     },
-    logoutSuccess(state, action) {
+    resetAuthErrors(state) {
+      state.error = null;
+      state.message = null;
+    },
+    logoutSuccess(state) {
       state.isAuthenticated = false;
       state.user = {};
       state.error = null;
     },
     logoutFailed(state, action) {
-      state.isAuthenticated;
-      state.user;
       state.error = action.payload;
     },
-    clearAllErrors(state, action) {
+    clearAllErrors(state) {
       state.error = null;
-      state.user;
     },
     addBookmarkSuccess(state, action) {
-      state.user.bookmarks.push(action.payload); // Add job to bookmarks
+      state.user.bookmarks.push(action.payload);
     },
     removeBookmarkSuccess(state, action) {
       state.user.bookmarks = state.user.bookmarks.filter(
-        (jobId) => jobId !== action.payload // Correct if bookmarks are job IDs
+        (jobId) => jobId !== action.payload
       );
     },
     addStarSuccess(state, action) {
-      state.user.roadmaps.push(action.payload); // Add roadmap to roadmaps
+      state.user.roadmaps.push(action.payload);
     },
     removeStarSuccess(state, action) {
       state.user.roadmaps = state.user.roadmaps.filter(
-        (roadmapId) => roadmapId !== action.payload // Correct if roadmarks are roadmaps IDs
+        (roadmapId) => roadmapId !== action.payload
       );
     },
     bookmarkFailed(state, action) {
       state.error = action.payload;
     },
-    roadmapFailed(state, action){
+    roadmapFailed(state, action) {
       state.error = action.payload;
     },
     deleteAccountRequest(state) {
       state.loading = true;
-  },
-  deleteAccountSuccess(state) {
+    },
+    deleteAccountSuccess(state) {
       state.loading = false;
       state.isAuthenticated = false;
       state.user = {};
       state.error = null;
-  },
-  deleteAccountFailed(state, action) {
+    },
+    deleteAccountFailed(state, action) {
       state.loading = false;
       state.error = action.payload;
-  },
-  // Download operations
-  downloadRoadmapRequest(state) {
-    state.loading = true;
-    state.downloadMessage = null;
-    state.error = null;
-  },
-  downloadRoadmapSuccess(state, action) {
-    state.loading = false;
-    state.downloadMessage = action.payload;
-    state.error = null;
-  },
-  downloadRoadmapFailed(state, action) {
-    state.loading = false;
-    state.downloadMessage = null;
-    state.error = action.payload;
-  },
+    },
+    downloadRoadmapRequest(state) {
+      state.loading = true;
+      state.downloadMessage = null;
+      state.error = null;
+    },
+    downloadRoadmapSuccess(state, action) {
+      state.loading = false;
+      state.downloadMessage = action.payload;
+      state.error = null;
+    },
+    downloadRoadmapFailed(state, action) {
+      state.loading = false;
+      state.downloadMessage = null;
+      state.error = action.payload;
+    },
   },
 });
 
+// Action creators remain the same
 export const register = (data) => async (dispatch) => {
   dispatch(userSlice.actions.registerRequest());
   try {
@@ -154,7 +150,6 @@ export const register = (data) => async (dispatch) => {
     );
     dispatch(userSlice.actions.registerSuccess(response.data));
   } catch (error) {
-    // More robust error handling
     const errorMessage = error.response?.data?.message || "Registration Failed";
     dispatch(userSlice.actions.registerFailed(errorMessage));
   }
@@ -188,84 +183,83 @@ export const getUser = () => async (dispatch) => {
       }
     );
     dispatch(userSlice.actions.fetchUserSuccess(response.data.user));
-    dispatch(userSlice.actions.clearAllErrors());
   } catch (error) {
-    dispatch(userSlice.actions.fetchUserFailed(error.response.data.message));
+    dispatch(userSlice.actions.fetchUserFailed(error.response?.data?.message));
   }
 };
+
+// Rest of the action creators remain the same
 export const logout = () => async (dispatch) => {
   try {
-    const response = await axios.get(
+    await axios.get(
       "https://www.backend.vitaminjob.com/api/v1/user/logout",
       {
         withCredentials: true,
       }
     );
     dispatch(userSlice.actions.logoutSuccess());
-    dispatch(userSlice.actions.clearAllErrors());
   } catch (error) {
-    dispatch(userSlice.actions.logoutFailed(error.response.data.message));
+    dispatch(userSlice.actions.logoutFailed(error.response?.data?.message));
   }
 };
+
+// Export all action creators and reducers
+export const {
+  resetAuthErrors,
+  clearAllErrors: clearAllUserErrors
+} = userSlice.actions;
+
 export const addBookmark = (jobId) => async (dispatch) => {
   try {
-    // Send jobId as a query parameter in the request
     await axios.post(
       `https://www.backend.vitaminjob.com/api/v1/user/bookmarks/add?jobId=${jobId}`,
       {},
       { withCredentials: true }
     );
-
     dispatch(userSlice.actions.addBookmarkSuccess(jobId));
   } catch (error) {
     const errorMessage = error?.response?.data?.message || "Login to add bookmark";
-      dispatch(userSlice.actions.bookmarkFailed(errorMessage));
+    dispatch(userSlice.actions.bookmarkFailed(errorMessage));
   }
 };
 
-
+// Rest of the code remains the same...
 export const removeBookmark = (jobId) => async (dispatch) => {
   try {
-    // Pass jobId as a query parameter
     await axios.delete(
       `https://www.backend.vitaminjob.com/api/v1/user/bookmarks/remove?jobId=${jobId}`,
       { withCredentials: true }
     );
-
     dispatch(userSlice.actions.removeBookmarkSuccess(jobId));
   } catch (error) {
-    const errorMessage = error?.response?.data?.message || "Failed to add bookmark";
+    const errorMessage = error?.response?.data?.message || "Failed to remove bookmark";
     dispatch(userSlice.actions.bookmarkFailed(errorMessage));
   }
 };
+
 export const addStar = (roadmapId) => async (dispatch) => {
   try {
-    // Send roadmapId as a query parameter in the request
     await axios.post(
       `https://www.backend.vitaminjob.com/api/v1/user/roadmaps/add?roadmapId=${roadmapId}`,
       {},
       { withCredentials: true }
     );
-
     dispatch(userSlice.actions.addStarSuccess(roadmapId));
   } catch (error) {
     const errorMessage = error?.response?.data?.message || "Login to star roadmap";
-      dispatch(userSlice.actions.roadmapFailed(errorMessage));
+    dispatch(userSlice.actions.roadmapFailed(errorMessage));
   }
 };
 
-
 export const removeStar = (roadmapId) => async (dispatch) => {
   try {
-    // Pass roadmapId as a query parameter
     await axios.delete(
       `https://www.backend.vitaminjob.com/api/v1/user/roadmaps/remove?roadmapId=${roadmapId}`,
       { withCredentials: true }
     );
-
     dispatch(userSlice.actions.removeStarSuccess(roadmapId));
   } catch (error) {
-    const errorMessage = error?.response?.data?.message || "Failed to star roadmap";
+    const errorMessage = error?.response?.data?.message || "Failed to remove star";
     dispatch(userSlice.actions.roadmapFailed(errorMessage));
   }
 };
@@ -279,38 +273,33 @@ export const downloadRoadmap = (roadmapId, filename) => async (dispatch) => {
         withCredentials: true,
       }
     );
-
     if (!response.data.url) {
       throw new Error('PDF URL not found');
     }
-
     dispatch(userSlice.actions.downloadRoadmapSuccess('Download started successfully'));
     window.open(response.data.url, '_blank');
   } catch (error) {
-    const errorMessage = "Please login to download roadmaps";  // Changed error message
-    dispatch(userSlice.actions.downloadRoadmapFailed(errorMessage));
+    dispatch(userSlice.actions.downloadRoadmapFailed("Please login to download roadmaps"));
     throw error;
   }
 };
+
 export const deleteAccount = (password) => async (dispatch) => {
   dispatch(userSlice.actions.deleteAccountRequest());
   try {
-      const response = await axios.delete(
-          "https://www.backend.vitaminjob.com/api/v1/user/delete",
-          {
-              data: { password },
-              withCredentials: true,
-          }
-      );
-      dispatch(userSlice.actions.deleteAccountSuccess());
+    await axios.delete(
+      "https://www.backend.vitaminjob.com/api/v1/user/delete",
+      {
+        data: { password },
+        withCredentials: true,
+      }
+    );
+    dispatch(userSlice.actions.deleteAccountSuccess());
   } catch (error) {
-      const errorMessage = error?.response?.data?.message || "Failed to delete account";
-      dispatch(userSlice.actions.deleteAccountFailed(errorMessage));
+    const errorMessage = error?.response?.data?.message || "Failed to delete account";
+    dispatch(userSlice.actions.deleteAccountFailed(errorMessage));
   }
 };
 
-export const clearAllUserErrors = () => (dispatch) => {
-  dispatch(userSlice.actions.clearAllErrors());
-};
-export { userSlice };  // Export the slice itself
+export { userSlice };
 export default userSlice.reducer;
