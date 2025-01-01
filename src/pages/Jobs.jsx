@@ -177,7 +177,7 @@ const Jobs = () => {
 
   // Modify the fetch effect to ensure it uses the saved page
   useEffect(() => {
-    if (error) {
+    if (error && error !== "User not authenticated") {
       toast.error(error);
       dispatch(clearAllJobErrors());
     }
