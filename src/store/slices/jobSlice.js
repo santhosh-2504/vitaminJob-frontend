@@ -55,7 +55,6 @@ const jobSlice = createSlice({
       state.currentPage = action.payload.currentPage;
       state.totalPages = action.payload.totalPages;
       state.totalJobs = action.payload.totalJobs;
-      state.error = null;
     },
     applyJobRequest(state) {
       state.loading = true;

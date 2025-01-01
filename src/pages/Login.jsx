@@ -50,7 +50,7 @@ const Login = () => {
 
   // Handle errors
   useEffect(() => {
-    if (error) {
+    if (error && error !== "User not authenticated") {
       toast.error(error);
       dispatch(clearAllUserErrors());
     }

@@ -24,7 +24,6 @@ const roadmapSlice = createSlice({
       state.currentPage = action.payload.currentPage;
       state.totalPages = action.payload.totalPages;
       state.totalRoadmaps = action.payload.totalRoadmaps;
-      state.error = null;
     
     },
     getAllRoadmapsFailed(state, action) {
@@ -53,7 +52,6 @@ export const fetchRoadmaps = (niche, searchKeyword = "", page = 1) => async (dis
     }
 
     const response = await axios.get(url, {
-      withCredentials: true,
       headers: { "Content-Type": "application/json" }
     });
 
