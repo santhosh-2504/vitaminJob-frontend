@@ -182,7 +182,7 @@ const Jobs = () => {
       dispatch(clearAllJobErrors());
     }
 
-    if (userError) {
+    if (userError && userError !== "User not authenticated") {
       toast.error(userError);
       dispatch(clearAllUserErrors());
     }
