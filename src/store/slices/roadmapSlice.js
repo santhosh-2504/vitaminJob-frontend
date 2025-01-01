@@ -53,6 +53,7 @@ export const fetchRoadmaps = (niche, searchKeyword = "", page = 1) => async (dis
     }
 
     const response = await axios.get(url, {
+      withCredentials: true,
       headers: { "Content-Type": "application/json" }
     });
 
