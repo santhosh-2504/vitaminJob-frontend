@@ -16,7 +16,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import { getUser } from "./store/slices/userSlice";
 import PrivacyPolicy from "./components/PrivacyPolicy";
-import TermsOfService from "./components/TermsOfService";
+import TermsOfService from "./components/TermsOfService"
 import Roadmaps from "./pages/Roadmaps";
 import Courses from "./pages/Courses";
 import QuizPage from "./pages/QuizPage";
