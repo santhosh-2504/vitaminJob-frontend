@@ -17,7 +17,6 @@ const roadmapSlice = createSlice({
     getAllRoadmapsRequest(state) {
       state.loading = true;
       state.error = null;
-      state.message = null;
     },
     getAllRoadmapsSuccess(state, action) {
       state.loading = false;
@@ -26,19 +25,17 @@ const roadmapSlice = createSlice({
       state.totalPages = action.payload.totalPages;
       state.totalRoadmaps = action.payload.totalRoadmaps;
       state.error = null;
-      state.message = action.payload.message;
+    
     },
     getAllRoadmapsFailed(state, action) {
       state.loading = false;
       state.error = action.payload;
-      state.message = null;
-      state.roadmaps = [];
     },
     
     // Clear errors
     clearErrors(state) {
       state.error = null;
-      state.message = null;
+      state.roadmaps
     }
   }
 });
