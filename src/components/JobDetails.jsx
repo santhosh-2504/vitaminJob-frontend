@@ -50,7 +50,7 @@ const JobDetails = () => {
       // Store the current path
       navigate('/login', { 
         state: { 
-          from: `/jobs/${jobId}`,  // Use explicit path instead of location.pathname
+          from: `/apply/${jobId}`,  // Use explicit path instead of location.pathname
           applyAfterLogin: true 
         } 
       });
