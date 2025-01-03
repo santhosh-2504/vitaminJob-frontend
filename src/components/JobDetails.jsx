@@ -6,12 +6,13 @@ import { fetchSingleJob } from "../store/slices/jobSlice";
 import Spinner from "../components/Spinner";
 import { FaExternalLinkAlt, FaArrowLeft } from "react-icons/fa";
 
-
 const JobDetails = () => {
   const { jobId } = useParams();
   const dispatch = useDispatch();
   const { singleJob, loading, error } = useSelector((state) => state.jobs);
   const navigate = useNavigate();
+  // Add auth state from Redux store
+  const { isAuthenticated } = useSelector((state) => state.user);
 
   useEffect(() => {
     dispatch(fetchSingleJob(jobId));
@@ -39,7 +40,16 @@ const JobDetails = () => {
   }, []);
 
   const handleApply = () => {
-    // Simply open the application link
+    // Check if user is authenticated
+    if (!isAuthenticated) {
+      // Save the current URL to redirect back after login
+      localStorage.setItem('redirectAfterLogin', window.location.pathname);
+      // Redirect to login page
+      navigate('/login');
+      return;
+    }
+    
+    // If authenticated, proceed with the application
     window.open(singleJob.applyLink, '_blank');
   };
 
