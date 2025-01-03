@@ -1,17 +1,18 @@
 import { useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { MdLocationOn, MdWork, MdAttachMoney, MdLabel } from "react-icons/md";
 import { fetchSingleJob } from "../store/slices/jobSlice";
 import Spinner from "../components/Spinner";
 import { FaExternalLinkAlt, FaArrowLeft } from "react-icons/fa";
+import { toast } from 'react-toastify';
 
 const JobDetails = () => {
   const { jobId } = useParams();
   const dispatch = useDispatch();
+  const location = useLocation();
   const { singleJob, loading, error } = useSelector((state) => state.jobs);
   const navigate = useNavigate();
-  // Add auth state from Redux store
   const { isAuthenticated } = useSelector((state) => state.user);
 
   useEffect(() => {
@@ -40,18 +41,35 @@ const JobDetails = () => {
   }, []);
 
   const handleApply = () => {
-    // Check if user is authenticated
     if (!isAuthenticated) {
-      // Save the current URL to redirect back after login
-      localStorage.setItem('redirectAfterLogin', window.location.pathname);
-      // Redirect to login page
-      navigate('/login');
+      toast.info("Please Login to Apply", {
+        position: "top-right",
+        autoClose: 3000,
+      });
+      
+      // Store the current path
+      navigate('/login', { 
+        state: { 
+          from: `/jobs/${jobId}`,  // Use explicit path instead of location.pathname
+          applyAfterLogin: true 
+        } 
+      });
       return;
     }
     
-    // If authenticated, proceed with the application
     window.open(singleJob.applyLink, '_blank');
   };
+
+  // Effect to handle post-login redirect and automatic apply
+  useEffect(() => {
+    const { state } = location;
+    if (isAuthenticated && state?.from === location.pathname && state?.applyAfterLogin) {
+      // Clear the state
+      navigate(location.pathname, { replace: true });
+      // Automatically open apply link
+      window.open(singleJob.applyLink, '_blank');
+    }
+  }, [isAuthenticated, location, navigate, singleJob?.applyLink]);
 
   if (loading) {
     return <Spinner />;

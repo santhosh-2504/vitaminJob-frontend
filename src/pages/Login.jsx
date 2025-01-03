@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { clearAllUserErrors, login, resetAuthErrors } from "../store/slices/userSlice";
 import { toast } from "react-toastify";
 import { MdOutlineMailOutline } from "react-icons/md";
@@ -12,11 +12,12 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
+  const navigate = useNavigate();
+  const location = useLocation();
   // Only get loading and error from Redux state
   const { loading, error } = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
-  const navigateTo = useNavigate();
 
   // Check authentication status only after successful login
   const { isAuthenticated } = useSelector((state) => state.user);
@@ -44,10 +45,17 @@ const Login = () => {
   // Navigate after successful login
   useEffect(() => {
     if (isAuthenticated) {
-      navigateTo("/");
+      // Check if we have a return path in the state
+      if (location.state?.from) {
+        navigate(location.state.from, {
+          state: { applyAfterLogin: location.state.applyAfterLogin }
+        });
+      } else {
+        // If no return path, go to default page
+        navigate('/');
+      }
     }
-  }, [isAuthenticated, navigateTo]);
-
+  }, [isAuthenticated, navigate, location.state]);
   // Handle errors
   useEffect(() => {
     if (error && error !== "User not authenticated") {
