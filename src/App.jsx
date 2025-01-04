@@ -34,12 +34,19 @@ export const useTheme = () => useContext(ThemeContext);
 // Initialize Google Analytics with consent
 const initializeGA = () => {
   if (window.gtag) {
+    // Update consent status
     window.gtag("consent", "update", {
       analytics_storage: "granted"
     });
+    
+    // Configure GA with additional recommended settings
     window.gtag("config", "G-X74E9KV4LF", {
       send_page_view: true,
-      anonymize_ip: true
+      anonymize_ip: true,
+      page_path: window.location.pathname,
+      user_properties: {
+        theme_preference: localStorage.getItem("theme") || "light"
+      }
     });
   }
 };
@@ -51,8 +58,17 @@ const TrackPageView = () => {
     const hasConsent = getCookieConsentValue("cookieConsent") === "true";
     
     if (window.gtag && hasConsent) {
+      // Track page views with additional parameters
       window.gtag("event", "page_view", {
+        page_location: window.location.href,
         page_path: location.pathname,
+        page_title: document.title
+      });
+
+      // Track user engagement
+      window.gtag("event", "user_engagement", {
+        engagement_time_msec: 1000,
+        page_path: location.pathname
       });
     }
   }, [location]);

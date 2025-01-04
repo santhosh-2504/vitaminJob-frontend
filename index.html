@@ -13,16 +13,18 @@
         dataLayer.push(arguments);
       }
       gtag('js', new Date());
-
+    
       // Set default consent to denied
       gtag('consent', 'default', {
-        'analytics_storage': 'denied'
+        'analytics_storage': 'denied',
+        'functionality_storage': 'denied'
       });
-
-      // Initialize GA with your tracking ID and IP anonymization
+    
+      // Initialize GA with basic configuration
       gtag('config', 'G-X74E9KV4LF', {
-          'anonymize_ip': true, // Ensure IP anonymization
-        'send_page_view': false // Disable automatic page views
+        'anonymize_ip': true,
+        'send_page_view': false,
+        'cookie_flags': 'secure;samesite=strict'
       });
     </script>
   </head>
