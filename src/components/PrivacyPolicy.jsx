@@ -4,125 +4,279 @@ const PrivacyPolicy = () => {
   const sections = [
     {
       title: "Welcome to Vitamin Job",
-      content: "Your privacy is of utmost importance to us. This Privacy Policy outlines how we collect, use, store, and protect your personal data when you use our website. By accessing or using our services, you agree to this Privacy Policy."
+      content: "Your privacy is of utmost importance to us. This Privacy Policy outlines how we collect, use, store, and protect your personal data when you use our website. By accessing or using our services, you agree to this Privacy Policy. We are committed to transparency and protecting your privacy rights."
     },
     {
       title: "Eligibility",
-      content: "Our website is not intended for users under the age of 16. During registration, users must confirm that they are at least 16 years old by checking a required checkbox."
+      content: `• Our website is not intended for users under the age of 16
+• During registration, users must confirm they are at least 16 years old through a required checkbox
+• We do not knowingly collect or store data from users under 16
+• If we discover we have collected data from a user under 16, we will promptly delete it`
     },
     {
       title: "Information We Collect",
       content: `Mandatory Information:
-• Email: Used solely for login purposes and to ensure account uniqueness.
-• Password: Stored securely using hashing algorithms.
-• Phone Number: Currently unused but planned for a future "Forgot Password" feature involving SMS or WhatsApp notifications.
+• Email Address:
+  - Used for account login and authentication
+  - Ensures account uniqueness
+  - Required for account-related notifications
+• Password:
+  - Stored securely using industry-standard hashing algorithms
+  - Never stored in plaintext
+  - Protected with secure HTTP-only cookies
+• Phone Number:
+  - Currently collected but not in active use
+  - Planned for future account recovery via SMS/WhatsApp
+  - Stored with encryption
 
 Optional Information:
-• Address: Collected for user personalization and stored in the dashboard. It has no immediate use.
-• Niche Preferences: Users can select up to three niches to receive future job-related emails if opted in.`
+• Physical Address:
+  - Stored for future personalization features
+  - Not currently in active use
+  - Can be updated or removed anytime
+• Niche Preferences:
+  - Select up to three professional niches
+  - Used for job recommendations if opted in
+  - Can be modified or removed through dashboard
+
+Technical Data:
+• Theme preferences (light/dark mode)
+• Session information
+• Browser type and version
+• Device type and operating system
+• Anonymous usage statistics (with consent)`
     },
     {
       title: "How We Use Your Information",
-      content: `• Email: For account login and verification.
-• Phone Number: Planned for account recovery in the future.
-• Niche Preferences: To send job-related emails based on user consent when relevant jobs are added.
-• Optional Data (e.g., Address): Stored for personalization but not actively used.`
+      content: `Authentication and Security:
+• Email address for account authentication
+• Password for secure access
+• Session management and security
+
+Account Features:
+• Phone number reserved for future account recovery
+• Address stored for future personalization
+• Niche preferences for job recommendations
+
+User Experience:
+• Theme preferences for personalized display
+• Anonymous analytics to improve website performance
+• Session data for security and functionality
+
+Communication:
+• Account-related notifications
+• Optional job recommendations based on niches
+• Important updates about our service`
     },
     {
       title: "User Rights",
-      content: `Update Profile:
-• Users can update their profile information through the "Update Profile" section in the dashboard, except for their email address (used for login purposes).
+      content: `Access Rights:
+• View all stored personal data through dashboard
+• Export personal data in a machine-readable format
+• Request detailed information about data usage
 
-Delete Account:
-• Users can delete their accounts through the "Delete Account" option in the dashboard. Upon deletion, all user data is permanently removed from our database without recovery.`
+Update Rights:
+• Modify personal information through dashboard
+• Update preferences and settings
+• Change niche selections
+• Email address cannot be modified (core identifier)
+
+Delete Rights:
+• Permanent account deletion through dashboard
+• Immediate removal of all associated data
+• No recovery option after deletion
+• Option to delete specific data points while maintaining account
+
+Control Rights:
+• Manage cookie preferences
+• Control email notifications
+• Opt out of analytics
+• Modify theme preferences`
     },
     {
       title: "Data Retention Policy",
-      content: `• We retain user data as long as the account remains active.
-• If a user deletes their account, all associated data is permanently deleted immediately.
-• Currently, no backups are maintained. If backups are implemented in the future, deleted user data will also be removed from backups within a reasonable period.`
+      content: `Active Accounts:
+• Data retained as long as account remains active
+• Regular reviews of stored data relevance
+• Option to manually delete specific data points
+
+Deleted Accounts:
+• Immediate permanent deletion of all user data
+• No backup retention of deleted account data
+• Complete removal from all systems
+
+Technical Data:
+• Analytics data retained for max 26 months
+• Session data deleted after session ends
+• Cookies expire based on their specific purpose
+
+Future Implementations:
+• If backups are implemented, deleted data will be removed within 30 days
+• Regular data cleanup processes
+• Automated data minimization procedures`
     },
     {
       title: "Data Sharing and Third Parties",
-      content: `• We do not share user data with any third parties
-• We use Google Analytics with IP anonymization enabled
-• No personal data is used for advertising purposes`
+      content: `Data Sharing Policy:
+• We do not sell user data
+• No sharing with third parties for marketing
+• No data trading or commercial sharing
+
+Third-Party Services:
+• Google Analytics with privacy-focused configuration:
+  - IP anonymization enabled
+  - Advertising features disabled
+  - Limited data retention
+  - Strict cookie controls
+• No third-party advertising trackers
+• No social media tracking integrations
+
+Data Processing:
+• All processing occurs on secure servers
+• No external data processors except Google Analytics
+• Strict data access controls`
     },
     {
       title: "Cookies and Analytics",
-      content: `We use cookies and similar technologies on our website for the following purposes:
-
-Essential Cookies:
-• Authentication: To keep you logged in and secure your session
-• Website Functionality: To remember your preferences and settings
+      content: `Essential Cookies:
+• Authentication and session management
+• Security features
+• Theme preferences
+• Cookie consent status
 
 Analytics Cookies (Optional):
-• We use Google Analytics to understand how visitors interact with our website
-• This helps us improve our services and user experience
-• Analytics cookies collect information such as:
-  - Pages you visit
-  - Time spent on each page
-  - Technical information (browser type, device type)
-  - General location data (country/city level only)
+• User engagement tracking
+• Page view statistics
+• Navigation patterns
+• Performance metrics
 
-Cookie Consent:
-• We will ask for your explicit consent before setting non-essential cookies
-• You can change your cookie preferences at any time
-• If you decline analytics cookies, you can still use our website fully
-• Your cookie preferences are saved for 365 days
+Cookie Management:
+• Explicit consent required for non-essential cookies
+• Easy opt-out options
+• Preference retention for 365 days
+• Regular consent renewal requirements
 
-Data Collection and Storage:
-• Analytics data is processed by Google Analytics
-• We have configured Google Analytics to anonymize IP addresses
-• Data is retained for a maximum of 26 months
-• We do not use cookies for advertising purposes`
-    },
-    {
-      title: "Third-Party Services",
-      content: `We use the following third-party service:
-
-Google Analytics:
-• Purpose: Website analytics and user experience improvement
-• Data Collected: Page views, session duration, navigation paths
-• Privacy Policy: https://policies.google.com/privacy
-• We have enabled IP anonymization and disabled data sharing for advertising`
-    },
-    {
-      title: "Notifications and Emails",
-      content: `• Users must provide explicit consent to receive marketing or job-related emails.
-• Users can opt-out of receiving emails at any time.
-• Job-related emails will only be sent based on niche preferences selected by the user.`
+Analytics Configuration:
+• IP anonymization
+• No cross-site tracking
+• Limited data retention
+• Secure data transmission
+• No advertising features`
     },
     {
       title: "Data Security",
-      content: `• Passwords are securely hashed before storage.
-• JWT-based authentication is used for secure access, and HTTP-only cookies store tokens.
-• Secure HTTPS API calls are enforced.`
+      content: `Security Measures:
+• Industry-standard password hashing
+• JWT-based authentication
+• HTTP-only secure cookies
+• HTTPS encryption
+• Regular security audits
+• Access control mechanisms
+• Session security
+• XSS protection
+• CSRF protection
+
+Technical Controls:
+• Secure API endpoints
+• Rate limiting
+• Input validation
+• Output encoding
+• Error handling
+• Logging controls`
     },
     {
       title: "Data Breach Protocol",
-      content: `While we take extensive measures to secure user data, in the event of a breach:
-• We will investigate the cause and take corrective actions.
-• Affected users will be promptly informed.`
+      content: `Response Plan:
+• Immediate investigation of potential breaches
+• Assessment of affected data
+• Implementation of containment measures
+• Notification to affected users within 72 hours
+• Detailed incident documentation
+
+Mitigation Steps:
+• Security patch implementation
+• System audits
+• User password resets if necessary
+• Review of security protocols
+• Enhanced monitoring
+
+Communication:
+• Clear notification of breach scope
+• Specific actions users should take
+• Contact information for questions
+• Regular updates during resolution`
     },
     {
-      title: "Inactivity and Account Deletion",
-      content: `• We do not automatically delete inactive accounts.
-• Users have full control over deleting their accounts manually.`
+      title: "Account Management",
+      content: `Active Accounts:
+• Full control over personal data
+• Access to all features
+• Regular security reviews
+• Optional email notifications
+
+Inactive Accounts:
+• No automatic deletion
+• Maintained until user requests deletion
+• All security measures remain active
+• Data retained as per active accounts
+
+Account Controls:
+• Password changes
+• Theme preferences
+• Notification settings
+• Privacy controls`
     },
     {
-      title: "Links to External Sites",
-      content: `• Our website contains links to external sites (e.g., job applications, courses). We are not responsible for the privacy practices of these external sites.
-• If any external site linked on our website has concerns regarding the shared links, they can contact us via email. We will review and take appropriate actions as needed.`
+      title: "External Links and Services",
+      content: `External Links:
+• Job application links
+• Course provider links
+• Resource links
+
+Disclaimer:
+• No control over external sites
+• Independent privacy policies apply
+• User responsibility when leaving site
+• Option for external sites to request link removal
+
+Security:
+• Regular link validation
+• Secure referral methods
+• Clear external link marking`
     },
     {
-      title: "Future Updates",
-      content: `• Any updates to this Privacy Policy will be communicated through a banner or scrolling message under the navbar for 15-30 days.
-• Users are encouraged to review the updated policy.`
+      title: "Policy Updates",
+      content: `Communication:
+• Visible notification banner for 30 days
+• Email notification for significant changes
+• In-app notifications
+• Update date clearly displayed
+
+User Rights:
+• Review updated terms
+• Accept or reject changes
+• Download previous versions
+• Contact support for clarification
+
+Implementation:
+• Clear change documentation
+• Reasonable notice period
+• User-friendly summaries
+• Regular policy reviews`
     },
     {
-      title: "Contact Us",
-      content: "For any privacy concerns or inquiries, users can contact us through our feedback form or directly via the email mentioned in the support section of our footer."
+      title: "Contact Information",
+      content: `For privacy-related inquiries:
+• Use our feedback form
+• Email our privacy team
+• Response within 48 business hours
+• Official support channels listed in footer
+
+For urgent concerns:
+• Dedicated privacy contact form
+• Priority response for data-related issues
+• Clear escalation process
+• Documentation requirements`
     }
   ];
 
@@ -140,7 +294,7 @@ Google Analytics:
             </h1>
             
             <div className="text-gray-600 dark:text-gray-300 mb-8">
-              Effective Date: December 31, 2024
+              Effective Date: January 4, 2025
             </div>
 
             <div className="space-y-8">

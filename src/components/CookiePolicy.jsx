@@ -4,7 +4,7 @@ const CookiePolicy = () => {
   const sections = [
     {
       title: "Introduction",
-      content: "This Cookie Policy explains how Vitamin Job uses cookies and similar tracking technologies when you visit our website. By continuing to browse our site, you are agreeing to our use of cookies as described in this policy."
+      content: "This Cookie Policy explains how Vitamin Job uses cookies and similar tracking technologies when you visit our website. By continuing to browse our site after accepting our cookie consent banner, you are agreeing to our use of cookies as described in this policy."
     },
     {
       title: "What Are Cookies?",
@@ -12,13 +12,14 @@ const CookiePolicy = () => {
 • Remember your preferences and settings
 • Understand how you use our website
 • Improve your browsing experience
-• Ensure our website's security and proper functioning`
+• Ensure our website's security and proper functioning
+• Provide a personalized user experience`
     },
     {
       title: "Types of Cookies We Use",
       content: `1. Essential Cookies:
 • Purpose: These cookies are necessary for the website to function properly
-• Usage: JWT-based authentication and security
+• Usage: JWT-based authentication, security, and theme preferences
 • Storage Duration: 7 days for authentication tokens (HTTP-only cookies)
 • Can be Disabled?: No, these are required for the website to work properly
 
@@ -26,22 +27,30 @@ const CookiePolicy = () => {
 • Purpose: Help us understand how visitors interact with our website
 • Provider: Google Analytics
 • Information Collected:
-  - Pages visited
-  - Time spent on pages
-  - Navigation paths
+  - Pages visited and viewing duration
+  - Navigation paths and user engagement metrics
+  - User interactions and events
+  - Theme preferences
   - Technical information (browser type, device type)
   - Approximate location (country/city level only)
 • Storage Duration: Up to 26 months
-• Can be Disabled?: Yes, through our cookie consent banner`
+• Can be Disabled?: Yes, through our cookie consent banner
+• Privacy Measures:
+  - IP address anonymization
+  - No personal data collection
+  - Strict data retention limits
+  - No advertising tracking`
     },
     {
       title: "Cookie Consent",
-      content: `• We will ask for your explicit consent before setting any non-essential cookies
+      content: `• We require explicit consent before setting any non-essential cookies
 • Your consent preferences are stored for 365 days
 • You can change your preferences at any time by:
   - Using the cookie consent banner
   - Clearing cookies through your browser settings
-• Declining analytics cookies will not affect your ability to use our website`
+• Declining analytics cookies will not affect your ability to use our website
+• Consent can be withdrawn at any time
+• All tracking activities cease immediately upon consent withdrawal`
     },
     {
       title: "How We Use Cookies",
@@ -49,25 +58,35 @@ const CookiePolicy = () => {
 • Maintaining your session when logged in
 • Storing your authentication status
 • Ensuring secure browsing experience
-• Remembering your basic preferences
+• Remembering your theme preferences
+• Managing cookie consent status
 
-Analytics Cookies:
-• Understanding which pages are most popular
-• Identifying how users navigate our website
-• Detecting technical issues and performance problems
-• Improving website structure and content`
+Analytics Cookies (When Consented):
+• Understanding user engagement patterns
+• Measuring time spent on different pages
+• Tracking user navigation flows
+• Analyzing feature usage and preferences
+• Identifying technical issues and performance problems
+• Improving website structure and content
+• Understanding theme preference patterns`
     },
     {
       title: "Third-Party Cookies",
-      content: `We currently use Google Analytics, which sets cookies to:
+      content: `We use Google Analytics (GA4), which sets cookies to:
 • Track page views and user behavior
 • Generate anonymous usage statistics
+• Measure user engagement
+• Track theme preferences
 • Help us improve our website
 
-We have configured Google Analytics to:
-• Anonymize IP addresses
-• Disable data sharing for advertising purposes
-• Limit data retention to 26 months`
+We have configured Google Analytics with strict privacy measures:
+• IP address anonymization enabled
+• Advertising features disabled
+• Data sharing limitations enforced
+• 26-month data retention limit
+• Secure data transmission
+• Cookie flags set to secure and same-site strict
+• No cross-site tracking enabled`
     },
     {
       title: "Managing Cookies",
@@ -77,6 +96,7 @@ We have configured Google Analytics to:
 • Accept all cookies
 • Decline non-essential cookies
 • Modify preferences at any time
+• Withdraw previous consent
 
 2. Browser Settings:
 • Chrome: Settings > Privacy and Security > Cookies
@@ -84,28 +104,42 @@ We have configured Google Analytics to:
 • Safari: Preferences > Privacy > Cookies
 • Edge: Settings > Privacy & Security > Cookies
 
-Note: Blocking all cookies may affect website functionality`
+Note: 
+• Blocking essential cookies will affect website functionality
+• You can delete cookies at any time through your browser settings
+• Each device and browser needs separate cookie management`
     },
     {
       title: "Data Collection and Privacy",
-      content: `• We do not use cookies to collect personally identifiable information
-• Analytics data is anonymized before processing
+      content: `• We do not collect or store personally identifiable information through cookies
+• All analytics data is anonymized before processing
 • We do not share cookie data with third parties except Google Analytics
-• We do not use cookies for advertising purposes
+• We do not use cookies for:
+  - Advertising purposes
+  - User profiling
+  - Cross-site tracking
+  - Marketing campaigns
+• Analytics data is processed in accordance with GDPR principles
+• We implement secure cookie flags and same-site restrictions
 • For more information about how we protect your privacy, please see our Privacy Policy`
     },
     {
       title: "Updates to This Policy",
-      content: `• We may update this Cookie Policy to reflect changes in our practices
+      content: `• We may update this Cookie Policy to reflect changes in:
+  - Our cookie usage practices
+  - Analytics implementation
+  - Privacy requirements
+  - Technical features
 • Significant changes will be notified through:
   - Website banners
   - Notifications under the navbar
   - Updates to the effective date of this policy
-• Continued use of our website after changes constitutes acceptance of the updated policy`
+• Continued use of our website after changes constitutes acceptance of the updated policy
+• Major changes may require renewed cookie consent`
     },
     {
       title: "Contact Us",
-      content: "If you have questions about our use of cookies or this Cookie Policy, please contact us through our feedback form or via the email provided in the support section of our footer."
+      content: "If you have questions about our use of cookies or this Cookie Policy, please contact us through our feedback form or via the email provided in the support section of our footer. We aim to respond to all cookie-related queries within 48 business hours."
     }
   ];
 
@@ -123,7 +157,7 @@ Note: Blocking all cookies may affect website functionality`
             </h1>
             
             <div className="text-gray-600 dark:text-gray-300 mb-8">
-              Effective Date: December 31, 2024
+              Effective Date: January 4, 2025
             </div>
 
             <div className="space-y-8">
