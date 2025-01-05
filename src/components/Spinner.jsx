@@ -1,10 +1,20 @@
-import { ClipLoader } from "react-spinners";
+import { useTheme } from "../App";
 
 const Spinner = () => {
+  const { darkMode } = useTheme();
+
   return (
-    <div className="min-h-[525px] flex justify-center items-center bg-transparent">
-      <ClipLoader size={150} color="currentColor" className="text-blue-600 dark:text-blue-400" />
+    <div className={`flex justify-center items-center h-screen 
+      ${darkMode ? "bg-gray-900" : "bg-gray-100"}`}>
+      <div
+        className={`animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 
+        ${darkMode 
+          ? "border-blue-400"
+          : "border-blue-600"
+        }`}
+      />
     </div>
   );
 };
+
 export default Spinner;

@@ -260,7 +260,7 @@ const Jobs = () => {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-6 pt-28 max-w-7xl">
+      <div className="container mx-auto px-6 pt-52 max-w-7xl md:pt-28">
         <div className="grid grid-cols-12 gap-4">
           {/* Left sidebar for ads */}
           <div className="hidden lg:block lg:col-span-2">
