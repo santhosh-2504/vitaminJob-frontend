@@ -39,7 +39,7 @@ const Navbar = () => {
                 to="/jobs"
                 className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
               >
-                JOBS
+                TECH JOBS
               </Link>
               <Link 
                 to="/roadmaps" 
@@ -151,6 +151,7 @@ const Navbar = () => {
                 >
                   QUIZZES
                 </Link>
+                
                 {/* <Link 
                   to="/posts"
                   className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"

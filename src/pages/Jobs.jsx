@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigationType, Link, useNavigate } from "react-router-dom";
+import { useNavigationType, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { fetchJobs, clearAllJobErrors } from "../store/slices/jobSlice";
 import { addBookmark, removeBookmark , clearAllUserErrors} from "../store/slices/userSlice";

@@ -9,6 +9,7 @@ import courseReducer from "./slices/courseSlice.js";
 import quizReducer from "./slices/quizSlice.js";
 //import postReducer from "./slices/postSlice.js"
 import quizTakingReducer from './slices/quizTakingSlice';
+import govtJobReducer from './slices/govtJobSlice';
 
 const store = configureStore({
   reducer: {
@@ -21,7 +22,8 @@ const store = configureStore({
     courses: courseReducer,
     quiz: quizReducer,
     //post : postReducer,
-    quizTaking: quizTakingReducer
+    quizTaking: quizTakingReducer,
+    govtJobs: govtJobReducer,
   },
 });
 

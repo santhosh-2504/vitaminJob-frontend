@@ -4,7 +4,7 @@ const PrivacyPolicy = () => {
   const sections = [
     {
       title: "Welcome to Vitamin Job",
-      content: "Your privacy is of utmost importance to us. This Privacy Policy outlines how we collect, use, store, and protect your personal data when you use our website. By accessing or using our services, you agree to this Privacy Policy. We are committed to transparency and protecting your privacy rights."
+      content: "Your privacy is of utmost importance to us. This Privacy Policy outlines how we collect, use, store, and protect your personal data when you use our website. By accessing or using our services, you agree to this Privacy Policy. We are committed to transparency and protecting your privacy rights while providing a free service supported by advertising."
     },
     {
       title: "Eligibility",
@@ -39,12 +39,17 @@ Optional Information:
   - Used for job recommendations if opted in
   - Can be modified or removed through dashboard
 
-Technical Data:
+Technical & Advertising Data:
 • Theme preferences (light/dark mode)
 • Session information
 • Browser type and version
 • Device type and operating system
-• Anonymous usage statistics (with consent)`
+• Anonymous usage statistics
+• Ad interaction data
+• Ad performance metrics
+• Browser advertising ID
+• IP address (for ad delivery)
+• Geographic location (country/city level)`
     },
     {
       title: "How We Use Your Information",
@@ -62,6 +67,14 @@ User Experience:
 • Theme preferences for personalized display
 • Anonymous analytics to improve website performance
 • Session data for security and functionality
+
+Advertising:
+• Deliver relevant advertisements
+• Measure ad performance
+• Prevent ad fraud
+• Optimize ad placement
+• Track ad interactions
+• Generate advertising analytics
 
 Communication:
 • Account-related notifications
@@ -91,7 +104,8 @@ Control Rights:
 • Manage cookie preferences
 • Control email notifications
 • Opt out of analytics
-• Modify theme preferences`
+• Modify theme preferences
+• Control ad personalization through browser settings`
     },
     {
       title: "Data Retention Policy",
@@ -105,9 +119,10 @@ Deleted Accounts:
 • No backup retention of deleted account data
 • Complete removal from all systems
 
-Technical Data:
+Technical & Advertising Data:
 • Analytics data retained for max 26 months
 • Session data deleted after session ends
+• Advertising data retained per Monetag's policy
 • Cookies expire based on their specific purpose
 
 Future Implementations:
@@ -119,8 +134,8 @@ Future Implementations:
       title: "Data Sharing and Third Parties",
       content: `Data Sharing Policy:
 • We do not sell user data
-• No sharing with third parties for marketing
-• No data trading or commercial sharing
+• Limited sharing with advertising partners
+• No data trading or commercial sharing beyond advertising
 
 Third-Party Services:
 • Google Analytics with privacy-focused configuration:
@@ -128,13 +143,37 @@ Third-Party Services:
   - Advertising features disabled
   - Limited data retention
   - Strict cookie controls
-• No third-party advertising trackers
-• No social media tracking integrations
+• Monetag Advertising Platform:
+  - Provides advertising services
+  - Collects user interaction data
+  - Uses cookies for ad delivery
+  - Has independent privacy policy
 
 Data Processing:
 • All processing occurs on secure servers
-• No external data processors except Google Analytics
+• External processors limited to Google Analytics and Monetag
 • Strict data access controls`
+    },
+    {
+      title: "Advertising Practices",
+      content: `Ad Delivery:
+• Advertisements served through Monetag
+• Automated ad placement and optimization
+• User interaction tracking for relevance
+• Geographic targeting where applicable
+
+Data Collection:
+• Browser and device information
+• Ad interaction data
+• IP address for targeting
+• Geographic location
+• Browser advertising ID
+
+Ad Privacy:
+• No personal data shared with advertisers
+• Aggregated performance metrics only
+• Standard industry privacy practices
+• Option to control personalization via browser`
     },
     {
       title: "Cookies and Analytics",
@@ -144,6 +183,12 @@ Data Processing:
 • Theme preferences
 • Cookie consent status
 
+Advertising Cookies:
+• Ad delivery and optimization
+• Performance measurement
+• User interaction tracking
+• Ad targeting
+
 Analytics Cookies (Optional):
 • User engagement tracking
 • Page view statistics
@@ -151,17 +196,15 @@ Analytics Cookies (Optional):
 • Performance metrics
 
 Cookie Management:
-• Explicit consent required for non-essential cookies
-• Easy opt-out options
+• Essential and advertising cookies are always active
+• Analytics cookies require explicit consent
 • Preference retention for 365 days
 • Regular consent renewal requirements
 
 Analytics Configuration:
 • IP anonymization
-• No cross-site tracking
 • Limited data retention
-• Secure data transmission
-• No advertising features`
+• Secure data transmission`
     },
     {
       title: "Data Security",
@@ -232,6 +275,7 @@ Account Controls:
 • Job application links
 • Course provider links
 • Resource links
+• Advertiser links
 
 Disclaimer:
 • No control over external sites
@@ -242,7 +286,8 @@ Disclaimer:
 Security:
 • Regular link validation
 • Secure referral methods
-• Clear external link marking`
+• Clear external link marking
+• Ad link monitoring`
     },
     {
       title: "Policy Updates",
@@ -276,7 +321,12 @@ For urgent concerns:
 • Dedicated privacy contact form
 • Priority response for data-related issues
 • Clear escalation process
-• Documentation requirements`
+• Documentation requirements
+
+For advertising-related inquiries:
+• Contact Monetag directly for ad-specific concerns
+• Use our feedback form for general ad questions
+• Report inappropriate ads through provided tools`
     }
   ];
 

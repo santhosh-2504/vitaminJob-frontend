@@ -26,6 +26,7 @@ import FeedbackForm from "./components/FeedbackForm";
 import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/ContactUs";
 import CookiePolicy from "./components/CookiePolicy";
+import GovtJobs from "./pages/GovtJobs";
 
 const ThemeContext = createContext();
 
@@ -185,6 +186,7 @@ const App = () => {
             <Route path="/feedback" element={<FeedbackForm />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/contact-us" element={<ContactUs />} />
+            <Route path="/govtjobs" element={<GovtJobs />} />
           </Routes>
           <Footer />
           <ToastContainer

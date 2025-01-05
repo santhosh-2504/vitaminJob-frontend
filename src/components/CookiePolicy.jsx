@@ -4,7 +4,7 @@ const CookiePolicy = () => {
   const sections = [
     {
       title: "Introduction",
-      content: "This Cookie Policy explains how Vitamin Job uses cookies and similar tracking technologies when you visit our website. By continuing to browse our site after accepting our cookie consent banner, you are agreeing to our use of cookies as described in this policy."
+      content: "This Cookie Policy explains how Vitamin Job uses cookies and similar tracking technologies when you visit our website. By using our website, you acknowledge our use of essential cookies and advertising technologies as described in this policy. For analytics cookies, we'll ask for your explicit consent."
     },
     {
       title: "What Are Cookies?",
@@ -12,134 +12,98 @@ const CookiePolicy = () => {
 • Remember your preferences and settings
 • Understand how you use our website
 • Improve your browsing experience
-• Ensure our website's security and proper functioning
-• Provide a personalized user experience`
+• Ensure our website's security
+• Deliver relevant advertisements`
     },
     {
       title: "Types of Cookies We Use",
       content: `1. Essential Cookies:
 • Purpose: These cookies are necessary for the website to function properly
-• Usage: JWT-based authentication, security, and theme preferences
-• Storage Duration: 7 days for authentication tokens (HTTP-only cookies)
-• Can be Disabled?: No, these are required for the website to work properly
+• Usage: Authentication, security, and preferences
+• Storage Duration: 7 days
+• These cookies are always active
 
-2. Analytics Cookies (Optional):
+2. Advertising Cookies:
+• Purpose: Deliver personalized advertisements and measure ad performance
+• Provider: Monetag
+• Usage: Ad delivery, measurement, and optimization
+• These cookies are part of our website's functionality
+
+3. Analytics Cookies (Optional):
 • Purpose: Help us understand how visitors interact with our website
 • Provider: Google Analytics
-• Information Collected:
-  - Pages visited and viewing duration
-  - Navigation paths and user engagement metrics
-  - User interactions and events
-  - Theme preferences
-  - Technical information (browser type, device type)
-  - Approximate location (country/city level only)
 • Storage Duration: Up to 26 months
-• Can be Disabled?: Yes, through our cookie consent banner
-• Privacy Measures:
-  - IP address anonymization
-  - No personal data collection
-  - Strict data retention limits
-  - No advertising tracking`
+• These cookies require your consent`
     },
     {
-      title: "Cookie Consent",
-      content: `• We require explicit consent before setting any non-essential cookies
-• Your consent preferences are stored for 365 days
-• You can change your preferences at any time by:
-  - Using the cookie consent banner
-  - Clearing cookies through your browser settings
-• Declining analytics cookies will not affect your ability to use our website
-• Consent can be withdrawn at any time
-• All tracking activities cease immediately upon consent withdrawal`
-    },
-    {
-      title: "How We Use Cookies",
-      content: `Essential Cookies:
-• Maintaining your session when logged in
-• Storing your authentication status
-• Ensuring secure browsing experience
-• Remembering your theme preferences
-• Managing cookie consent status
+      title: "Advertising on Our Website",
+      content: `We use Monetag as our advertising partner to:
+• Show relevant advertisements
+• Measure ad performance
+• Prevent ad fraud
+• Optimize ad delivery
 
-Analytics Cookies (When Consented):
-• Understanding user engagement patterns
-• Measuring time spent on different pages
-• Tracking user navigation flows
-• Analyzing feature usage and preferences
-• Identifying technical issues and performance problems
-• Improving website structure and content
-• Understanding theme preference patterns`
+Monetag uses cookies and similar technologies to:
+• Track ad interactions
+• Measure conversion rates
+• Prevent repetitive ads
+• Improve ad targeting
+
+These advertising technologies are an integral part of our service. If you prefer not to be tracked for advertising purposes, you can:
+• Use browser privacy settings
+• Enable "Do Not Track"
+• Use ad-blocking software
+• Opt out via Monetag's website`
     },
     {
-      title: "Third-Party Cookies",
-      content: `We use Google Analytics (GA4), which sets cookies to:
-• Track page views and user behavior
-• Generate anonymous usage statistics
-• Measure user engagement
-• Track theme preferences
-• Help us improve our website
-
-We have configured Google Analytics with strict privacy measures:
-• IP address anonymization enabled
-• Advertising features disabled
-• Data sharing limitations enforced
-• 26-month data retention limit
-• Secure data transmission
-• Cookie flags set to secure and same-site strict
-• No cross-site tracking enabled`
+      title: "Analytics Consent",
+      content: `• We ask for explicit consent before setting analytics cookies
+• You can change analytics preferences anytime
+• Declining analytics will not affect site functionality
+• Analytics cookies help us improve our service
+• You can withdraw analytics consent at any time`
     },
     {
       title: "Managing Cookies",
-      content: `You can manage cookies through:
+      content: `You can manage cookies through your browser settings:
 
-1. Our Cookie Consent Banner:
-• Accept all cookies
-• Decline non-essential cookies
-• Modify preferences at any time
-• Withdraw previous consent
-
-2. Browser Settings:
 • Chrome: Settings > Privacy and Security > Cookies
 • Firefox: Options > Privacy & Security > Cookies
 • Safari: Preferences > Privacy > Cookies
 • Edge: Settings > Privacy & Security > Cookies
 
+For advertising preferences:
+• Visit Monetag's opt-out page
+• Use your browser's privacy settings
+• Enable "Do Not Track"
+• Use ad-blocking tools
+
 Note: 
 • Blocking essential cookies will affect website functionality
-• You can delete cookies at any time through your browser settings
-• Each device and browser needs separate cookie management`
+• Each device and browser needs separate settings`
     },
     {
       title: "Data Collection and Privacy",
-      content: `• We do not collect or store personally identifiable information through cookies
-• All analytics data is anonymized before processing
-• We do not share cookie data with third parties except Google Analytics
-• We do not use cookies for:
-  - Advertising purposes
-  - User profiling
-  - Cross-site tracking
-  - Marketing campaigns
-• Analytics data is processed in accordance with GDPR principles
-• We implement secure cookie flags and same-site restrictions
-• For more information about how we protect your privacy, please see our Privacy Policy`
+      content: `• Essential cookies are necessary for site functionality
+• Advertising data helps provide relevant ads
+• Analytics data collection requires consent
+• We implement standard security measures
+• For more details, see our Privacy Policy
+• Monetag's privacy policy has additional information about their practices`
     },
     {
       title: "Updates to This Policy",
-      content: `• We may update this Cookie Policy to reflect changes in:
-  - Our cookie usage practices
-  - Analytics implementation
-  - Privacy requirements
-  - Technical features
-• Significant changes will be notified through:
-  - Website banners
-  - Notifications under the navbar
-  - Updates to the effective date of this policy
-• Continued use of our website after changes constitutes acceptance of the updated policy
-• Major changes may require renewed cookie consent`
+      content: `• We may update this policy to reflect:
+  - Changes in our practices
+  - New features or services
+  - Legal requirements
+• Updates will be posted on this page
+• Significant changes will be notified
+• Continued use means acceptance of changes`
     },
     {
       title: "Contact Us",
-      content: "If you have questions about our use of cookies or this Cookie Policy, please contact us through our feedback form or via the email provided in the support section of our footer. We aim to respond to all cookie-related queries within 48 business hours."
+      content: "If you have questions about our use of cookies or this Cookie Policy, please contact us through our feedback form or via the email provided in the support section of our footer. We aim to respond to all queries within 48 business hours."
     }
   ];
 
