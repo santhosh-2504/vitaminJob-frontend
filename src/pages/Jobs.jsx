@@ -7,6 +7,8 @@ import { toast } from "react-toastify";
 import { fetchJobs, clearAllJobErrors } from "../store/slices/jobSlice";
 import { addBookmark, removeBookmark , clearAllUserErrors} from "../store/slices/userSlice";
 import Spinner from "../components/Spinner";
+import {Helmet} from 'react-helmet-async'
+
 import { 
   FaBookmark, 
   FaRegBookmark, 
@@ -215,6 +217,12 @@ const Jobs = () => {
   };
 
   return (
+    <>
+    <Helmet>
+      <title>Jobs | Vitamin Jobs</title>
+      <meta name="description" content="Find your dream job with Vitamin Jobs. Explore a wide range of job opportunities and apply for your desired position today." />
+
+    </Helmet>
     <div className="bg-gray-100 dark:bg-gray-900 min-h-screen pt-16">
       {/* Fixed Search Section */}
       <div className="fixed top-16 left-0 right-0 z-10 bg-gray-100 dark:bg-gray-900 px-4 py-2">
@@ -418,6 +426,7 @@ const Jobs = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

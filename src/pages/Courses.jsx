@@ -9,6 +9,7 @@ import {
   FaCode,
   FaExternalLinkAlt
 } from "react-icons/fa";
+import { Helmet } from 'react-helmet-async';
 
 // Custom debounce hook
 const useDebounce = (value, delay) => {
@@ -166,6 +167,12 @@ const Courses = () => {
   }, [currentPage]);
 
   return (
+    <>
+    <Helmet>
+      <title>Courses | Vitamin Job</title>
+      <meta name="description" content="Vitamin Job is a course search platform that helps you find the courses you need to learn. Visit the best courses and learn new skills." />
+
+    </Helmet>
     <div className="bg-gray-100 dark:bg-gray-900 min-h-screen pt-16">
       {/* Fixed Search Section */}
       <div className="fixed top-16 left-0 right-0 z-10 bg-gray-100 dark:bg-gray-900 px-4 py-2">
@@ -302,6 +309,7 @@ const Courses = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

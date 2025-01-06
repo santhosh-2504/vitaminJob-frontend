@@ -6,6 +6,7 @@ import { fetchSingleJob } from "../store/slices/jobSlice";
 import Spinner from "../components/Spinner";
 import { FaExternalLinkAlt, FaArrowLeft } from "react-icons/fa";
 import { toast } from 'react-toastify';
+import { Helmet } from 'react-helmet-async';
 
 const JobDetails = () => {
   const { jobId } = useParams();
@@ -92,6 +93,12 @@ const JobDetails = () => {
   }
 
   return (
+    <>
+    <Helmet>
+      <title>Job Details | Vitamin Job</title>
+      <meta name="description" content="Best job opportunities for you. Apply now and start your journey to success." />
+
+    </Helmet>
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
       <div className="max-w-5xl mx-auto px-4 py-20 dark:text-white">
         {/* Add Back Button */}
@@ -196,6 +203,7 @@ const JobDetails = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

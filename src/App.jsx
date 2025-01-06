@@ -27,6 +27,7 @@ import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/ContactUs";
 import CookiePolicy from "./components/CookiePolicy";
 import GovtJobs from "./pages/GovtJobs";
+import { HelmetProvider } from "react-helmet-async";
 
 const ThemeContext = createContext();
 
@@ -167,6 +168,7 @@ const App = () => {
         <Router>
           <TrackPageView />
           <Navbar />
+          <HelmetProvider>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/jobs" element={<Jobs />} />
@@ -188,6 +190,7 @@ const App = () => {
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/govtjobs" element={<GovtJobs />} />
           </Routes>
+          </HelmetProvider>
           <Footer />
           <ToastContainer
             position="top-right"

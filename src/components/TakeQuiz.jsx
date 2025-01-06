@@ -12,6 +12,7 @@ import {
 import Spinner from './Spinner';
 import { FaClock, FaArrowLeft, FaArrowRight, FaExclamationTriangle } from 'react-icons/fa';
 import { toast } from 'react-toastify';
+import { Helmet } from 'react-helmet-async';
 
 const TakeQuiz = () => {
     const { id } = useParams();
@@ -198,6 +199,12 @@ const TakeQuiz = () => {
     }
     // Render quiz taking interface
     return (
+        <>
+        <Helmet>
+            <title>Take Quiz | Vitamin Job</title>
+            <meta name="description" content="Practice quizzes and test your knowledge. We provide a wide range of quizzes to help you learn." />
+
+        </Helmet>
         <div className="min-h-screen bg-gray-100 dark:bg-gray-900 py-20">
             <div className="container mx-auto px-4">
                 <div className="max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
@@ -303,6 +310,7 @@ const TakeQuiz = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

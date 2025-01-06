@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { RiLock2Fill } from "react-icons/ri";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -65,6 +66,12 @@ const Login = () => {
   }, [error, dispatch]);
 
   return (
+    <>
+    <Helmet>
+      <title>Login | Vitamin Job</title>
+      <meta name="description" content="Login to your account and find your dream job with Vitamin Job. We offer a wide range of job opportunities and apply for your desired position today." />
+
+    </Helmet>
     <section className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 px-4">
       <div className="max-w-md w-full p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
         <h3 className="text-2xl font-semibold text-center text-gray-900 dark:text-white mb-6">
@@ -148,6 +155,7 @@ const Login = () => {
         </form>
       </div>
     </section>
+    </>
   );
 };
 

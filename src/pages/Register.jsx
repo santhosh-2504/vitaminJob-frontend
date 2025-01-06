@@ -7,6 +7,7 @@ import { FaPencilAlt, FaEye, FaEyeSlash } from "react-icons/fa";
 import { FaPhoneFlip } from "react-icons/fa6";
 import {  MdOutlineMailOutline } from "react-icons/md";
 import { RiLock2Fill } from "react-icons/ri";
+import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -107,6 +108,12 @@ const Register = () => {
   );
 
   return (
+    <>
+    <Helmet>
+      <title>Register | Vitamin Job</title>
+      <meta name="description" content="Vitamin Job is a Job search platform that helps you in finding your dream job. Register now and start your journey to success." />
+
+    </Helmet>
     <div className="mt-5">
     <section className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
       <div className="max-w-2xl w-full bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg mb-10">
@@ -288,6 +295,7 @@ const Register = () => {
       </div>
     </section>
     </div>
+    </>
   );
 };
 

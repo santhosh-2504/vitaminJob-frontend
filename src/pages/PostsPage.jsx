@@ -9,6 +9,7 @@ import Spinner from '../components/Spinner';
 import { toast } from 'react-toastify';
 import { getInitials, getRandomColor } from '../utils/avatarUtils';
 import useScrollToTop from '../hooks/useScrollToTop';
+import { Helmet } from 'react-helmet-async';
 
 const Avatar = ({ user, className }) => {
   if (!user) return null;
@@ -319,6 +320,12 @@ const PostsPage = () => {
   }
 
   return (
+    <>
+    <Helmet>
+      <title>Posts | Vitamin Job</title>
+      <meta name="description" content="Read the latest posts and news from Vitamin Job. Stay updated with the latest job opportunities and industry trends." />
+
+    </Helmet>
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 py-8">
       {/* Search Section */}
       <div className="fixed top-16 left-0 right-0 z-10 bg-gray-100 dark:bg-gray-900 px-4 py-2">
@@ -388,6 +395,7 @@ const PostsPage = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 

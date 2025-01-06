@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import Spinner from '../components/Spinner.jsx';
 import { Download, Star } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 // Custom debounce hook
 const useDebounce = (value, delay) => {
@@ -149,6 +150,12 @@ const RoadmapPage = () => {
   }, []);
 
   return (
+    <>
+    <Helmet>
+      <title>Roadmaps | Vitamin Job</title>
+      <meta name="description" content="Vitamin Job is a Job search platform that helps you in finding the best roadmaps to learn new skills. We provide a wide range of roadmaps to guide you in your journey to success." />
+
+    </Helmet>
     <div className="bg-gray-100 dark:bg-gray-900 min-h-screen pt-16">
       {/* Fixed Search Section */}
       <div className="fixed top-16 left-0 right-0 z-10 bg-gray-100 dark:bg-gray-900 px-4 py-2">
@@ -297,6 +304,7 @@ const RoadmapPage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { fetchQuizzes, clearQuizErrors } from "../store/slices/quizSlice";
 import Spinner from "../components/Spinner";
 import { FaBook } from "react-icons/fa";
+import { Helmet } from 'react-helmet-async';
 
 // Custom debounce hook
 const useDebounce = (value, delay) => {
@@ -86,6 +87,12 @@ export default function QuizPage() {
   };
 
   return (
+    <>
+    <Helmet>
+      <title>Quizzes | Vitamin Job</title>
+      <meta name="description" content="Vitamin Job is a Job search platform that helps you in practising quizzes. We provive many quizzes to help you in your preparation." />
+
+    </Helmet>
     <div className="bg-gray-100 dark:bg-gray-900 min-h-screen pt-16">
       {/* Fixed Search Section */}
       <div className="fixed top-16 left-0 right-0 z-10 bg-gray-100 dark:bg-gray-900 px-4 py-2">
@@ -239,5 +246,6 @@ export default function QuizPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

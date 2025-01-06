@@ -7,6 +7,7 @@ import { fetchGovtJobs, clearAllGovtJobErrors } from "../store/slices/govtJobSli
 import Spinner from "../components/Spinner";
 import { FaBookmark, FaRegBookmark, FaMapMarkerAlt, FaMoneyBillWave, FaBriefcase, FaClock } from "react-icons/fa";
 import { addBookmark, removeBookmark, clearAllUserErrors } from "../store/slices/userSlice";
+import { Helmet } from 'react-helmet-async';
 
 const useDebounce = (value, delay) => {
     const [debouncedValue, setDebouncedValue] = useState(value);
@@ -127,6 +128,12 @@ const GovtJobs = () => {
     };
 
     return (
+        <>
+        <Helmet>
+            <title>Govt Jobs | Vitamin Job</title>
+            <meta name="description" content="Vitamin Job is a job search platform that helps you find government jobs. We provide a wide range of government jobs, view and apply for your desired position today." />
+
+        </Helmet>
         <div className="bg-gray-100 dark:bg-gray-900 min-h-screen pt-16">
             {/* Fixed Search Section */}
             <div className="fixed top-16 left-0 right-0 z-10 bg-gray-100 dark:bg-gray-900 px-4 py-2">
@@ -288,6 +295,7 @@ const GovtJobs = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

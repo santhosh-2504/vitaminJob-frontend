@@ -10,6 +10,7 @@ import UpdatePassword from "../components/UpdatePassword";
 import Bookmarks from "../components/Bookmarks";
 import DeleteAccount from "../components/DeleteAccount";
 import FavRoadmaps from "../components/FavRoadmaps";
+import { Helmet } from 'react-helmet-async';
 //import LikedPosts from "../components/LikedPosts";
 
 const Dashboard = () => {
@@ -43,6 +44,12 @@ const Dashboard = () => {
   }, [dispatch, error, loading, isAuthenticated, navigateTo]);
 
   return (
+    <>
+    <Helmet>
+      <title>Dashboard | Vitamin Job</title>
+      <meta name="description" content="Vitamin Job is a job search platform that helps you find your dream job. We offer a wide range of job opportunities and apply for your desired position today." />
+
+    </Helmet>
     <div className="pt-8">
     <section className="dashboard bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen">
       <div className="max-w-7xl mx-auto py-14">
@@ -143,6 +150,7 @@ const Dashboard = () => {
       </div>
     </section>
     </div>
+    </>
   );
 };
 

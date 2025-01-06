@@ -2,7 +2,7 @@ import Hero from "../components/Hero";
 import TopNiches from "../components/TopNiches";
 import HowItWorks from "../components/HowItWorks";
 import  { useEffect } from 'react';
-
+import { Helmet } from 'react-helmet-async';
 
 
 const Home = () => {
@@ -11,6 +11,12 @@ const Home = () => {
   }, []);
 
   return (
+    <>
+    <Helmet>
+      <title>Vitamin Job</title>
+      <meta name="description" content="Vitamin Job is a job search platform that helps you find your dream job. We offer a wide range of job opportunities and apply for your desired position today." />
+
+    </Helmet>
     <main className="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
       {/* Hero Section */}
       <section id="hero">
@@ -31,6 +37,7 @@ const Home = () => {
         </div>
       </section>
     </main>
+    </>
   );
 };
 

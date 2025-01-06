@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-
+import { Helmet } from 'react-helmet-async';
 const AboutUs = () => {
   const sections = [
     {
@@ -49,6 +49,12 @@ Roadmaps for Success:
   }, []);
 
   return (
+    <>
+    <Helmet>
+      <title>About Us | Vitamin Job</title>
+      <meta name="description" content="Know more about Vitamin Job." />
+
+    </Helmet>
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
@@ -73,6 +79,7 @@ Roadmaps for Success:
         </div>
       </div>
     </div>
+    </>
   );
 };
 

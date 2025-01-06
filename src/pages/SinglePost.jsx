@@ -8,6 +8,7 @@ import { getInitials, getRandomColor } from '../utils/avatarUtils';
 import PropTypes from 'prop-types';
 import Spinner from '../components/Spinner';
 import { toast } from 'react-toastify';
+import { Helmet } from 'react-helmet-async';
 
 const Avatar = ({ user, className }) => {
   if (!user) return null;
@@ -176,6 +177,12 @@ const SinglePost = () => {
   }
 
   return (
+    <>
+    <Helmet>
+      <title>Blogs | Vitamin Job</title>
+      <meta name="description" content="Read this blog and learn something new today." />
+
+    </Helmet>
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 py-20">
       <div className="max-w-3xl mx-auto px-4 mb-6">
         <button
