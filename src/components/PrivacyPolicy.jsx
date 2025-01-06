@@ -211,7 +211,7 @@ For advertising-related inquiries:
             </h1>
             
             <div className="text-gray-600 dark:text-gray-300 mb-8">
-              Effective Date: January 4, 2025
+              Effective Date: January 6, 2025
             </div>
 
             <div className="space-y-8">
