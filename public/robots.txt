@@ -1,0 +1,25 @@
+# Industry-Ready Robots.txt for vitaminjob.com
+
+User-agent: *
+Allow: /
+
+# Sitemap for search engines
+Sitemap: https://www.vitaminjob.com/sitemap.xml
+
+# Crawl Delay (Optional, only for certain crawlers)
+# This can help if your server is struggling with heavy crawler activity
+User-agent: *
+Crawl-delay: 10
+
+# Specific rules for popular bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Additional Guidelines
+# Bots may access these areas for social preview generation or static assets
+Allow: /images/
+Allow: /css/
+Allow: /js/
