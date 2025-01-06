@@ -4,7 +4,7 @@ const PrivacyPolicy = () => {
   const sections = [
     {
       title: "Welcome to Vitamin Job",
-      content: "Your privacy is of utmost importance to us. This Privacy Policy outlines how we collect, use, store, and protect your personal data when you use our website. By accessing or using our services, you agree to this Privacy Policy. We are committed to transparency and protecting your privacy rights."
+      content: "Your privacy is of utmost importance to us. This Privacy Policy outlines how we collect, use, store, and protect your personal data when you use our website. By accessing or using our services, you agree to this Privacy Policy. We are committed to transparency and protecting your privacy rights while providing our services supported by advertising."
     },
     {
       title: "Eligibility",
@@ -39,13 +39,44 @@ Optional Information:
   - Used for job recommendations if opted in
   - Can be modified or removed through dashboard
 
-Technical Data:
+Technical & Advertising Data:
 • Theme preferences (light/dark mode)
 • Session information
 • Browser type and version
 • Device type and operating system
 • Anonymous usage statistics
-• Geographic location (country/city level)`
+• IP address (for geographic targeting)
+• Geographic location (country/city level)
+• Ad interaction data
+• Browser cookies and similar technologies`
+    },
+    {
+      title: "Advertising and Google AdSense",
+      content: `We use Google AdSense to display advertisements on our website. Google AdSense and its certified vendors may use cookies and similar technologies to:
+
+• Show personalized ads based on:
+  - Your previous visits to our site
+  - Your interests and online behavior
+  - Geographic location
+  - Browser and device information
+
+• Measure and improve ad performance:
+  - Track ad impressions and clicks
+  - Analyze user interactions
+  - Optimize ad delivery
+
+• Ensure quality and security:
+  - Prevent repetitive ads
+  - Combat fraud and abuse
+  - Verify proper ad display
+
+You can learn more about how Google uses data by visiting Google's Privacy & Terms page at https://policies.google.com/technologies/partner-sites
+
+Ad Personalization Controls:
+• Opt out via Google Ad Settings (https://adssettings.google.com)
+• Use Network Advertising Initiative opt-out (http://www.networkadvertising.org/choices/)
+• Adjust your browser's cookie settings
+• Enable "Do Not Track" in your browser`
     },
     {
       title: "How We Use Your Information",
@@ -63,6 +94,11 @@ User Experience:
 • Theme preferences for personalized display
 • Anonymous analytics to improve website performance
 • Session data for security and functionality
+
+Advertising:
+• Deliver relevant advertisements through Google AdSense
+• Improve ad targeting and performance
+• Ensure compliance with advertising policies
 
 Communication:
 • Account-related notifications
@@ -92,7 +128,8 @@ Control Rights:
 • Manage cookie preferences
 • Control email notifications
 • Opt out of analytics
-• Modify theme preferences`
+• Modify theme preferences
+• Control ad personalization through Google Ad Settings`
     },
     {
       title: "Data Retention Policy",
@@ -106,9 +143,10 @@ Deleted Accounts:
 • No backup retention of deleted account data
 • Complete removal from all systems
 
-Technical Data:
+Technical & Advertising Data:
 • Analytics data retained for max 26 months
 • Session data deleted after session ends
+• Advertising cookies per Google AdSense policies
 • Cookies expire based on their specific purpose
 
 Future Implementations:
@@ -120,13 +158,16 @@ Future Implementations:
       title: "Data Sharing and Third Parties",
       content: `Data Sharing Policy:
 • We do not sell user data
-• No data trading or commercial sharing
 • Limited sharing with essential service providers
+• Data shared with Google for advertising purposes
 
 Third-Party Services:
+• Google AdSense:
+  - Provides advertising services
+  - Uses cookies for ad personalization
+  - Has independent privacy policy
 • Google Analytics with privacy-focused configuration:
   - IP anonymization enabled
-  - Advertising features disabled
   - Limited data retention
   - Strict cookie controls
 
@@ -134,132 +175,6 @@ Data Processing:
 • All processing occurs on secure servers
 • External processors limited to essential services
 • Strict data access controls`
-    },
-    {
-      title: "Cookies and Analytics",
-      content: `Essential Cookies:
-• Authentication and session management
-• Security features
-• Theme preferences
-• Cookie consent status
-
-Analytics Cookies (Optional):
-• User engagement tracking
-• Page view statistics
-• Navigation patterns
-• Performance metrics
-
-Cookie Management:
-• Essential cookies are always active
-• Analytics cookies require explicit consent
-• Preference retention for 365 days
-• Regular consent renewal requirements
-
-Analytics Configuration:
-• IP anonymization
-• Limited data retention
-• Secure data transmission`
-    },
-    {
-      title: "Data Security",
-      content: `Security Measures:
-• Industry-standard password hashing
-• JWT-based authentication
-• HTTP-only secure cookies
-• HTTPS encryption
-• Regular security audits
-• Access control mechanisms
-• Session security
-• XSS protection
-• CSRF protection
-
-Technical Controls:
-• Secure API endpoints
-• Rate limiting
-• Input validation
-• Output encoding
-• Error handling
-• Logging controls`
-    },
-    {
-      title: "Data Breach Protocol",
-      content: `Response Plan:
-• Immediate investigation of potential breaches
-• Assessment of affected data
-• Implementation of containment measures
-• Notification to affected users within 72 hours
-• Detailed incident documentation
-
-Mitigation Steps:
-• Security patch implementation
-• System audits
-• User password resets if necessary
-• Review of security protocols
-• Enhanced monitoring
-
-Communication:
-• Clear notification of breach scope
-• Specific actions users should take
-• Contact information for questions
-• Regular updates during resolution`
-    },
-    {
-      title: "Account Management",
-      content: `Active Accounts:
-• Full control over personal data
-• Access to all features
-• Regular security reviews
-• Optional email notifications
-
-Inactive Accounts:
-• No automatic deletion
-• Maintained until user requests deletion
-• All security measures remain active
-• Data retained as per active accounts
-
-Account Controls:
-• Password changes
-• Theme preferences
-• Notification settings
-• Privacy controls`
-    },
-    {
-      title: "External Links and Services",
-      content: `External Links:
-• Job application links
-• Course provider links
-• Resource links
-
-Disclaimer:
-• No control over external sites
-• Independent privacy policies apply
-• User responsibility when leaving site
-• Option for external sites to request link removal
-
-Security:
-• Regular link validation
-• Secure referral methods
-• Clear external link marking`
-    },
-    {
-      title: "Policy Updates",
-      content: `Communication:
-• Visible notification banner for 30 days
-• Email notification for significant changes
-• In-app notifications
-• Update date clearly displayed
-
-User Rights:
-• Review updated terms
-• Accept or reject changes
-• Download previous versions
-• Contact support for clarification
-
-Implementation:
-• Clear change documentation
-• Reasonable notice period
-• User-friendly summaries
-• Regular policy reviews`
     },
     {
       title: "Contact Information",
@@ -273,7 +188,12 @@ For urgent concerns:
 • Dedicated privacy contact form
 • Priority response for data-related issues
 • Clear escalation process
-• Documentation requirements`
+• Documentation requirements
+
+For advertising-related inquiries:
+• Visit Google Ad Settings for personalization controls
+• Use our feedback form for general ad questions
+• Report inappropriate ads through Google AdSense`
     }
   ];
 

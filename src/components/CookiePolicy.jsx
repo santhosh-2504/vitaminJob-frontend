@@ -4,7 +4,7 @@ const CookiePolicy = () => {
   const sections = [
     {
       title: "Introduction",
-      content: "This Cookie Policy explains how Vitamin Job uses cookies and similar tracking technologies when you visit our website. By using our website, you acknowledge our use of essential cookies as described in this policy. For analytics cookies, we'll ask for your explicit consent."
+      content: "This Cookie Policy explains how Vitamin Job uses cookies and similar tracking technologies when you visit our website. Our website uses Google AdSense for advertising purposes, which involves additional cookies for ad personalization and delivery. By using our website, you acknowledge our use of essential cookies and advertising-related cookies as described in this policy. For analytics cookies, we'll ask for your explicit consent."
     },
     {
       title: "What Are Cookies?",
@@ -12,21 +12,59 @@ const CookiePolicy = () => {
 • Remember your preferences and settings
 • Understand how you use our website
 • Improve your browsing experience
-• Ensure our website's security`
+• Ensure our website's security
+• Deliver relevant advertisements
+• Measure ad performance`
     },
     {
       title: "Types of Cookies We Use",
       content: `1. Essential Cookies:
 • Purpose: These cookies are necessary for the website to function properly
-• Usage: Authentication, security, and preferences
+• Usage: Authentication, security, theme preferences, and session management
 • Storage Duration: 7 days
 • These cookies are always active
 
 2. Analytics Cookies (Optional):
 • Purpose: Help us understand how visitors interact with our website
-• Provider: Google Analytics
+• Provider: Google Analytics with privacy-focused configuration
+• Features: IP anonymization enabled, limited data retention
 • Storage Duration: Up to 26 months
-• These cookies require your consent`
+• These cookies require your consent
+
+3. Advertising Cookies:
+• Provider: Google AdSense and certified vendors
+• Purpose: Deliver personalized advertisements
+• Usage:
+  - Show relevant ads based on your interests
+  - Track ad performance and interactions
+  - Prevent repetitive ads
+  - Combat fraud and abuse
+• Storage Duration: Varies according to Google AdSense policies`
+    },
+    {
+      title: "Advertising and Cookie Usage",
+      content: `Google AdSense uses cookies to:
+• Personalize ads based on:
+  - Previous visits to our site
+  - Your interests and online behavior
+  - Geographic location
+  - Browser and device information
+
+• Track and measure:
+  - Ad impressions and clicks
+  - User interactions
+  - Ad performance metrics
+
+• Ensure quality by:
+  - Preventing duplicate ads
+  - Detecting invalid clicks
+  - Maintaining security standards
+
+You can manage ad personalization through:
+• Google Ad Settings (https://adssettings.google.com)
+• Network Advertising Initiative opt-out
+• Browser cookie settings
+• "Do Not Track" browser setting`
     },
     {
       title: "Analytics Consent",
@@ -34,7 +72,8 @@ const CookiePolicy = () => {
 • You can change analytics preferences anytime
 • Declining analytics will not affect site functionality
 • Analytics cookies help us improve our service
-• You can withdraw analytics consent at any time`
+• You can withdraw analytics consent at any time
+• Analytics data is retained for maximum 26 months`
     },
     {
       title: "Managing Cookies",
@@ -47,14 +86,19 @@ const CookiePolicy = () => {
 
 Note: 
 • Blocking essential cookies will affect website functionality
-• Each device and browser needs separate settings`
+• Each device and browser needs separate settings
+• Blocking advertising cookies may affect ad relevance
+• You can opt out of personalized advertising through Google Ad Settings`
     },
     {
       title: "Data Collection and Privacy",
       content: `• Essential cookies are necessary for site functionality
-• Analytics data collection requires consent
+• Analytics data collection requires explicit consent
+• Advertising cookies follow Google AdSense policies
 • We implement standard security measures
-• For more details, see our Privacy Policy`
+• For more details, see our Privacy Policy
+• We do not sell user data
+• Limited data sharing with essential service providers`
     },
     {
       title: "Updates to This Policy",
@@ -62,13 +106,22 @@ Note:
   - Changes in our practices
   - New features or services
   - Legal requirements
+  - Changes in advertising technologies
 • Updates will be posted on this page
 • Significant changes will be notified
 • Continued use means acceptance of changes`
     },
     {
       title: "Contact Us",
-      content: "If you have questions about our use of cookies or this Cookie Policy, please contact us through our feedback form or via the email provided in the support section of our footer. We aim to respond to all queries within 48 business hours."
+      content: `For cookie-related inquiries:
+• Use our feedback form
+• Email our privacy team
+• Response within 48 business hours
+
+For advertising-related concerns:
+• Visit Google Ad Settings for personalization controls
+• Use our feedback form for general ad questions
+• Report inappropriate ads through Google AdSense`
     }
   ];
 
