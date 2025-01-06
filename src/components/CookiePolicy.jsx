@@ -4,7 +4,7 @@ const CookiePolicy = () => {
   const sections = [
     {
       title: "Introduction",
-      content: "This Cookie Policy explains how Vitamin Job uses cookies and similar tracking technologies when you visit our website. By using our website, you acknowledge our use of essential cookies and advertising technologies as described in this policy. For analytics cookies, we'll ask for your explicit consent."
+      content: "This Cookie Policy explains how Vitamin Job uses cookies and similar tracking technologies when you visit our website. By using our website, you acknowledge our use of essential cookies as described in this policy. For analytics cookies, we'll ask for your explicit consent."
     },
     {
       title: "What Are Cookies?",
@@ -12,8 +12,7 @@ const CookiePolicy = () => {
 • Remember your preferences and settings
 • Understand how you use our website
 • Improve your browsing experience
-• Ensure our website's security
-• Deliver relevant advertisements`
+• Ensure our website's security`
     },
     {
       title: "Types of Cookies We Use",
@@ -23,37 +22,11 @@ const CookiePolicy = () => {
 • Storage Duration: 7 days
 • These cookies are always active
 
-2. Advertising Cookies:
-• Purpose: Deliver personalized advertisements and measure ad performance
-• Provider: Monetag
-• Usage: Ad delivery, measurement, and optimization
-• These cookies are part of our website's functionality
-
-3. Analytics Cookies (Optional):
+2. Analytics Cookies (Optional):
 • Purpose: Help us understand how visitors interact with our website
 • Provider: Google Analytics
 • Storage Duration: Up to 26 months
 • These cookies require your consent`
-    },
-    {
-      title: "Advertising on Our Website",
-      content: `We use Monetag as our advertising partner to:
-• Show relevant advertisements
-• Measure ad performance
-• Prevent ad fraud
-• Optimize ad delivery
-
-Monetag uses cookies and similar technologies to:
-• Track ad interactions
-• Measure conversion rates
-• Prevent repetitive ads
-• Improve ad targeting
-
-These advertising technologies are an integral part of our service. If you prefer not to be tracked for advertising purposes, you can:
-• Use browser privacy settings
-• Enable "Do Not Track"
-• Use ad-blocking software
-• Opt out via Monetag's website`
     },
     {
       title: "Analytics Consent",
@@ -72,12 +45,6 @@ These advertising technologies are an integral part of our service. If you prefe
 • Safari: Preferences > Privacy > Cookies
 • Edge: Settings > Privacy & Security > Cookies
 
-For advertising preferences:
-• Visit Monetag's opt-out page
-• Use your browser's privacy settings
-• Enable "Do Not Track"
-• Use ad-blocking tools
-
 Note: 
 • Blocking essential cookies will affect website functionality
 • Each device and browser needs separate settings`
@@ -85,11 +52,9 @@ Note:
     {
       title: "Data Collection and Privacy",
       content: `• Essential cookies are necessary for site functionality
-• Advertising data helps provide relevant ads
 • Analytics data collection requires consent
 • We implement standard security measures
-• For more details, see our Privacy Policy
-• Monetag's privacy policy has additional information about their practices`
+• For more details, see our Privacy Policy`
     },
     {
       title: "Updates to This Policy",
