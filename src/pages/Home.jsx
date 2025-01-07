@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <>
     <Helmet>
-      <title>Vitamin Job</title>
+      <title>Vitamin Job - Your Gateway to Success</title>
       <meta name="description" content="Vitamin Job is a job search platform that helps you find your dream job. We offer a wide range of job opportunities and apply for your desired position today." />
 
     </Helmet>
