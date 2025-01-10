@@ -119,10 +119,10 @@ const Footer = () => {
             <ul className="space-y-2">
               {[
 
-                { icon: FaSquareInstagram, label: "Instagram" , url:"https://www.instagram.com/vitaminjob2024/profilecard/?igsh=MWRsMjQ1azFhbXZtMQ=="},
+                { icon: FaSquareInstagram, label: "Instagram" , url:"https://www.instagram.com/vitaminjob2025/profilecard/?igsh=MWRsMjQ1azFhbXZtMQ=="},
                 { icon: FaSquareWhatsapp, label: "WhatsApp" , url :"https://chat.whatsapp.com/Jcvi1ScKimw4D6QHwB8bJl"},
 
-                { icon: FaLinkedin, label: "LinkedIn" },
+                { icon: FaLinkedin, label: "LinkedIn" , url:"https://www.linkedin.com/in/santhosh-kumar-995860344/"},
               
               ].map((social, index) => (
                 <li key={index}>
