@@ -122,26 +122,52 @@ const JobDetails = () => {
                 </h2>
               </div>
               
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="flex items-center space-x-2">
-                  <MdLocationOn className="text-blue-500 dark:text-blue-400 text-xl" />
-                  <span className="dark:text-gray-300">
-                    {Array.isArray(singleJob.location)
-                      ? singleJob.location.join(", ")
-                      : singleJob.location || "Not specified"}
-                  </span>
+              {/* Updated job details grid with fixed icon sizes */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="flex items-start">
+                  <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center">
+                    <MdLocationOn className="w-6 h-6 text-blue-500 dark:text-blue-400" />
+                  </div>
+                  <div className="ml-2 flex-1">
+                    <span className="dark:text-gray-300 break-words">
+                      {Array.isArray(singleJob.location)
+                        ? singleJob.location.join(", ")
+                        : singleJob.location || "Not specified"}
+                    </span>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <MdAttachMoney className="text-blue-500 dark:text-blue-400 text-xl" />
-                  <span className="dark:text-gray-300">{singleJob.salary || "Not specified"}</span>
+
+                <div className="flex items-start">
+                  <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center">
+                    <MdAttachMoney className="w-6 h-6 text-blue-500 dark:text-blue-400" />
+                  </div>
+                  <div className="ml-2 flex-1">
+                    <span className="dark:text-gray-300 break-words">
+                      {singleJob.salary || "Not specified"}
+                    </span>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <MdWork className="text-blue-500 dark:text-blue-400 text-xl" />
-                  <span className="dark:text-gray-300">{singleJob.jobType || "Not specified"}</span>
+
+                <div className="flex items-start">
+                  <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center">
+                    <MdWork className="w-6 h-6 text-blue-500 dark:text-blue-400" />
+                  </div>
+                  <div className="ml-2 flex-1">
+                    <span className="dark:text-gray-300 break-words">
+                      {singleJob.jobType || "Not specified"}
+                    </span>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <MdLabel className="text-blue-500 dark:text-blue-400 text-xl" />
-                  <span className="dark:text-gray-300">{singleJob.niche || "Not specified"}</span>
+
+                <div className="flex items-start">
+                  <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center">
+                    <MdLabel className="w-6 h-6 text-blue-500 dark:text-blue-400" />
+                  </div>
+                  <div className="ml-2 flex-1">
+                    <span className="dark:text-gray-300 break-words">
+                      {singleJob.niche || "Not specified"}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -205,7 +231,7 @@ const JobDetails = () => {
             </p>
           </div>
           
-          {/* Apply Now Button - Moved to bottom with enhanced design */}
+          {/* Apply Now Button */}
           <div className="flex justify-center">
             <button
               onClick={handleApply}
