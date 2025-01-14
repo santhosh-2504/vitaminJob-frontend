@@ -2,15 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- <link rel="canonical" href="https://www.vitaminjob.com/" /> -->
-    <meta name="description" content="Find government jobs, tech jobs, roadmaps, quizzes, and courses tailored for job seekers and students." />
     <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Find government jobs, tech jobs, roadmaps, quizzes, and courses tailored for job seekers and students." />
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" as="image" href="/logo.webp" fetchpriority="high">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    
     <title>Vitamin Job - Your Gateway to Success</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8413438270446322"
-     crossorigin="anonymous"></script>
-    <!-- Google Analytics with Default Denied Consent -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X74E9KV4LF"></script>
+    
+    <!-- Defer non-critical scripts -->
+    <script defer async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8413438270446322" crossorigin="anonymous"></script>
+    <script defer async src="https://www.googletagmanager.com/gtag/js?id=G-X74E9KV4LF"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -18,13 +27,11 @@
       }
       gtag('js', new Date());
     
-      // Set default consent to denied
       gtag('consent', 'default', {
         'analytics_storage': 'denied',
         'functionality_storage': 'denied'
       });
     
-      // Initialize GA with basic configuration
       gtag('config', 'G-X74E9KV4LF', {
         'anonymize_ip': true,
         'send_page_view': false,

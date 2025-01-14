@@ -1,32 +1,22 @@
 /* eslint-disable react-refresh/only-export-components */
-import { useEffect, createContext, useContext, useState } from "react";
+import { useEffect, createContext, useContext, useState, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import JobDetails from "./components/JobDetails";
-import Home from "./pages/Home";
-import Dashboard from "./pages/Dashboard";
-import Jobs from "./pages/Jobs";
-import Login from "./pages/Login";
-import NotFound from "./pages/NotFound";
-import Register from "./pages/Register";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import { getUser } from "./store/slices/userSlice";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsOfService from "./components/TermsOfService"
-import Roadmaps from "./pages/Roadmaps";
-import Courses from "./pages/Courses";
-import QuizPage from "./pages/QuizPage";
 import QuizDetails from "./components/QuizDetails";
 import TakeQuiz from "./components/TakeQuiz";
 import FeedbackForm from "./components/FeedbackForm";
 import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/ContactUs";
 import CookiePolicy from "./components/CookiePolicy";
-import GovtJobs from "./pages/GovtJobs";
 import { HelmetProvider } from "react-helmet-async";
 
 const ThemeContext = createContext();
@@ -77,6 +67,18 @@ const TrackPageView = () => {
 
   return null;
 };
+
+// Lazy load components
+const Home = lazy(() => import("./pages/Home"));
+const Dashboard = lazy(() => import("./pages/Dashboard"));
+const Jobs = lazy(() => import("./pages/Jobs"));
+const Login = lazy(() => import("./pages/Login"));
+const Register = lazy(() => import("./pages/Register"));
+const Roadmaps = lazy(() => import("./pages/Roadmaps"));
+const Courses = lazy(() => import("./pages/Courses"));
+const QuizPage = lazy(() => import("./pages/QuizPage"));
+const GovtJobs = lazy(() => import("./pages/GovtJobs"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const App = () => {
   const dispatch = useDispatch();
@@ -163,34 +165,34 @@ const App = () => {
   };
 
   return (
-    <>
+    <HelmetProvider>
       <ThemeContext.Provider value={{ darkMode, toggleDarkMode }}>
         <Router>
           <TrackPageView />
           <Navbar />
-          <HelmetProvider>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/jobs" element={<Jobs />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="*" element={<NotFound />} />
-            <Route path="/apply/:jobId" element={<JobDetails />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/cookie-policy" element={<CookiePolicy />} />
-            <Route path="/terms" element={<TermsOfService />} />
-            <Route path="/roadmaps" element={<Roadmaps />} />
-            <Route path="/courses" element={<Courses />} />
-            <Route path="/quizzes" element={<QuizPage />} />
-            <Route path="/quiz/:id" element={<QuizDetails />} />
-            <Route path="/quiz/:id/start" element={<TakeQuiz />} />
-            <Route path="/feedback" element={<FeedbackForm />} />
-            <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/contact-us" element={<ContactUs />} />
-            <Route path="/govtjobs" element={<GovtJobs />} />
-          </Routes>
-          </HelmetProvider>
+          <Suspense fallback={<div className="loading">Loading...</div>}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/jobs" element={<Jobs />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="*" element={<NotFound />} />
+              <Route path="/apply/:jobId" element={<JobDetails />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/cookie-policy" element={<CookiePolicy />} />
+              <Route path="/terms" element={<TermsOfService />} />
+              <Route path="/roadmaps" element={<Roadmaps />} />
+              <Route path="/courses" element={<Courses />} />
+              <Route path="/quizzes" element={<QuizPage />} />
+              <Route path="/quiz/:id" element={<QuizDetails />} />
+              <Route path="/quiz/:id/start" element={<TakeQuiz />} />
+              <Route path="/feedback" element={<FeedbackForm />} />
+              <Route path="/about-us" element={<AboutUs />} />
+              <Route path="/contact-us" element={<ContactUs />} />
+              <Route path="/govtjobs" element={<GovtJobs />} />
+            </Routes>
+          </Suspense>
           <Footer />
           <ToastContainer
             position="top-right"
@@ -278,7 +280,7 @@ const App = () => {
           </CookieConsent>
         </Router>
       </ThemeContext.Provider>
-    </>
+    </HelmetProvider>
   );
 };
 

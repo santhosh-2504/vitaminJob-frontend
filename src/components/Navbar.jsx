@@ -18,11 +18,16 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
-              <img 
-                src="/logo.png" 
-                alt="logo" 
-                className="h-8 w-auto dark:invert"
-              />
+              <picture>
+                <source srcSet="/logo.webp" type="image/webp" />
+                <img 
+                  src="/logo.png" 
+                  alt="logo" 
+                  width="32"
+                  height="32"
+                  className="h-8 w-auto dark:invert"
+                />
+              </picture>
             </Link>
           </div>
 
@@ -59,23 +64,13 @@ const Navbar = () => {
               >
                 QUIZ
               </Link>
-              {/* <Link 
-                to="/posts" 
-                className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-              >
-                BLOG
-              </Link> */}
-              
               {isAuthenticated ? (
-                <>
                 <Link 
                   to="/dashboard"
                   className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
                 >
                   DASHBOARD
                 </Link>
-              
-              </>
               ) : (
                 <Link 
                   to="/login"
@@ -131,48 +126,38 @@ const Navbar = () => {
                 JOBS
               </Link>
               <Link 
-                  to="/roadmaps"
-                  className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                  onClick={() => setShow(false)}
-                >
-                  ROADMAPS
-                </Link>
-                <Link 
-                  to="/courses"
-                  className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                  onClick={() => setShow(false)}
-                >
-                  COURSES
-                </Link>
-                <Link 
-                  to="/quizzes"
-                  className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                  onClick={() => setShow(false)}
-                >
-                  QUIZZES
-                </Link>
-                
-                {/* <Link 
-                  to="/posts"
-                  className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                  onClick={() => setShow(false)}
-                >
-                  Blog
-                </Link> */} 
+                to="/roadmaps"
+                className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                onClick={() => setShow(false)}
+              >
+                ROADMAPS
+              </Link>
+              <Link 
+                to="/courses"
+                className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                onClick={() => setShow(false)}
+              >
+                COURSES
+              </Link>
+              <Link 
+                to="/quizzes"
+                className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                onClick={() => setShow(false)}
+              >
+                QUIZZES
+              </Link>
               {isAuthenticated ? (
-                <><Link 
+                <Link 
                   to="/dashboard"
                   className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
                   onClick={() => setShow(false)}
                 >
                   DASHBOARD
                 </Link>
-              
-                </>
               ) : (
                 <Link 
                   to="/login"
-                  className="text-gray-700 dark:text-gray-200 hover:text-gray900 dark:hover:text-white"
+                  className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
                   onClick={() => setShow(false)}
                 >
                   LOGIN
