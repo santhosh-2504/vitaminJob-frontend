@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useEffect, createContext, useContext, useState } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation,Link } from "react-router-dom";
 import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -205,77 +205,94 @@ const App = () => {
             pauseOnHover
           />
           <CookieConsent
-            location="bottom"
-            buttonText="Accept"
-            declineButtonText="Decline"
-            enableDeclineButton
-            cookieName="cookieConsent"
-            style={{ 
-              background: darkMode ? "#1f2937" : "#f3f4f6",
-              color: darkMode ? "#fff" : "#000",
-              padding: "1rem",
-              alignItems: "center",
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "1rem"
-            }}
-            buttonStyle={{
-              background: darkMode ? "#059669" : "#047857",
-              color: "#fff",
-              borderRadius: "6px",
-              padding: "8px 16px",
-              fontSize: "0.875rem"
-            }}
-            declineButtonStyle={{
-              background: "transparent",
-              border: darkMode ? "1px solid #fff" : "1px solid #000",
-              color: darkMode ? "#fff" : "#000",
-              borderRadius: "6px",
-              padding: "8px 16px",
-              marginRight: "10px",
-              fontSize: "0.875rem"
-            }}
-            expires={365}
-            onAccept={() => {
-              initializeGA();
-            }}
-            onDecline={() => {
-              // Optional: Handle decline action
-              if (window.gtag) {
-                window.gtag("consent", "update", {
-                  analytics_storage: "denied",
-                  anonymize_ip: true
-                });
-              }
-            }}
-          >
-            <div>
-              We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.{" "}
-              <span style={{ fontSize: "12px", display: "block", marginTop: "8px" }}>
-                Read our{" "}
-                <a 
-                  href="/privacy-policy"
+                  location="bottom"
+                  buttonText="Accept"
+                  declineButtonText="Decline"
+                  enableDeclineButton
+                  cookieName="cookieConsent"
                   style={{ 
-                    color: darkMode ? "#10b981" : "#059669",
-                    textDecoration: "underline" 
-                    
+                    background: darkMode ? "#1f2937" : "#f3f4f6",
+                    color: darkMode ? "#f3f4f6" : "#111827",
+                    padding: "1rem",
+                    alignItems: "center",
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "1rem",
+                    boxShadow: "0 -4px 6px -1px rgba(0, 0, 0, 0.1)",
+                    borderTop: `1px solid ${darkMode ? "#374151" : "#e5e7eb"}`
                   }}
-                >
-                  Privacy Policy
-                </a>
-                {" "}and{" "}
-                <a 
-                  href="/cookie-policy"
-                  style={{ 
-                    color: darkMode ? "#10b981" : "#059669",
-                    textDecoration: "underline" 
+                  buttonStyle={{
+                    background: darkMode ? "#059669" : "#047857",
+                    color: "#ffffff",
+                    borderRadius: "0.375rem",
+                    padding: "0.625rem 1.25rem",
+                    fontSize: "0.875rem",
+                    fontWeight: "500",
+                    transition: "all 150ms ease-in-out",
+                    cursor: "pointer",
+                    border: "none",
+                    outline: "2px solid transparent",
+                    outlineOffset: "2px"
                   }}
+                  declineButtonStyle={{
+                    background: "transparent",
+                    border: darkMode ? "2px solid #f3f4f6" : "2px solid #111827",
+                    color: darkMode ? "#f3f4f6" : "#111827",
+                    borderRadius: "0.375rem",
+                    padding: "0.625rem 1.25rem",
+                    marginRight: "0.625rem",
+                    fontSize: "0.875rem",
+                    fontWeight: "500",
+                    cursor: "pointer",
+                    transition: "all 150ms ease-in-out"
+                  }}
+                  expires={365}
+                  onAccept={() => {
+                    initializeGA();
+                  }}
+                  onDecline={() => {
+                    if (window.gtag) {
+                      window.gtag("consent", "update", {
+                        analytics_storage: "denied",
+                        anonymize_ip: true
+                      });
+                    }
+                  }}
+                  role="alertdialog"
+                  aria-describedby="cookie-consent-description"
                 >
-                  Cookie Policy
-                </a>
-              </span>
-            </div>
-          </CookieConsent>
+                  <div id="cookie-consent-description">
+                    <p className="text-base">
+                      We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.
+                    </p>
+                    <p className="text-sm mt-2">
+                      Read our{" "}
+                      <Link
+                        to="/privacy-policy"
+                        className={`underline font-medium ${
+                          darkMode 
+                            ? "text-blue-400 hover:text-blue-300" 
+                            : "text-blue-600 hover:text-blue-700"
+                        }`}
+                        aria-label="Read our privacy policy"
+                      >
+                        Privacy Policy
+                      </Link>
+                      {" "}and{" "}
+                      <Link
+                        to="/cookie-policy"
+                        className={`underline font-medium ${
+                          darkMode 
+                            ? "text-blue-400 hover:text-blue-300" 
+                            : "text-blue-600 hover:text-blue-700"
+                        }`}
+                        aria-label="Read our cookie policy"
+                      >
+                        Cookie Policy
+                      </Link>
+                    </p>
+                  </div>
+             </CookieConsent>
         </Router>
       </ThemeContext.Provider>
     </>

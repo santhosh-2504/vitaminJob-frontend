@@ -11,16 +11,20 @@ const Navbar = () => {
   const { isAuthenticated } = useSelector((state) => state.user);
 
   return (
-    <nav className={`fixed w-full top-0 z-50 bg-white dark:bg-gray-900 shadow-md transition-colors duration-200 
-      ${show ? "h-screen md:h-auto" : ""}`}>
+    <nav 
+      className={`fixed w-full top-0 z-50 bg-white dark:bg-gray-900 shadow-md transition-colors duration-200 
+      ${show ? "h-screen md:h-auto" : ""}`}
+      role="navigation"
+      aria-label="Main navigation"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/" className="flex items-center">
+            <Link to="/" className="flex items-center" aria-label="Home">
               <img 
                 src="/logo.png" 
-                alt="logo" 
+                alt="Website logo" 
                 className="h-8 w-auto dark:invert"
               />
             </Link>
@@ -31,55 +35,46 @@ const Navbar = () => {
             <div className="flex items-center space-x-8">
               <Link 
                 to="/" 
-                className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                className="text-gray-800 dark:text-gray-100 hover:text-gray-900 dark:hover:text-white"
               >
                 HOME
               </Link>
               <Link 
                 to="/jobs"
-                className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                className="text-gray-800 dark:text-gray-100 hover:text-gray-900 dark:hover:text-white"
               >
                 TECH JOBS
               </Link>
               <Link 
                 to="/roadmaps" 
-                className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                className="text-gray-800 dark:text-gray-100 hover:text-gray-900 dark:hover:text-white"
               >
                 ROADMAPS
               </Link>
               <Link 
                 to="/courses" 
-                className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                className="text-gray-800 dark:text-gray-100 hover:text-gray-900 dark:hover:text-white"
               >
                 COURSES
               </Link>
               <Link 
                 to="/quizzes" 
-                className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                className="text-gray-800 dark:text-gray-100 hover:text-gray-900 dark:hover:text-white"
               >
                 QUIZ
               </Link>
-              {/* <Link 
-                to="/posts" 
-                className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-              >
-                BLOG
-              </Link> */}
               
               {isAuthenticated ? (
-                <>
                 <Link 
                   to="/dashboard"
-                  className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                  className="text-gray-800 dark:text-gray-100 hover:text-gray-900 dark:hover:text-white"
                 >
                   DASHBOARD
                 </Link>
-              
-              </>
               ) : (
                 <Link 
                   to="/login"
-                  className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                  className="text-gray-800 dark:text-gray-100 hover:text-gray-900 dark:hover:text-white"
                 >
                   LOGIN
                 </Link>
@@ -89,98 +84,93 @@ const Navbar = () => {
 
           {/* Right Side: Theme Toggle Button and Mobile Menu Button */}
           <div className="flex items-center space-x-4">
-            {/* Theme Toggle Button */}
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
-              aria-label="Toggle Theme"
+              aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
             >
               {darkMode ? (
-                <FaSun className="w-5 h-5 text-yellow-400" />
+                <FaSun className="w-5 h-5 text-yellow-400" aria-hidden="true" />
               ) : (
-                <FaMoon className="w-5 h-5 text-gray-600" />
+                <FaMoon className="w-5 h-5 text-gray-700" aria-hidden="true" />
               )}
             </button>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setShow(!show)}
               className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+              aria-label="Toggle navigation menu"
+              aria-expanded={show}
+              aria-controls="mobile-menu"
             >
-              <GiHamburgerMenu className="w-6 h-6 text-gray-600 dark:text-gray-200" />
+              <GiHamburgerMenu className="w-6 h-6 text-gray-700 dark:text-gray-100" aria-hidden="true" />
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
-        {show && (
-          <div className="md:hidden">
-            <div className="flex flex-col space-y-4 px-2 pt-2 pb-3">
+        <div 
+          className={`md:hidden ${show ? 'block' : 'hidden'}`}
+          id="mobile-menu"
+          role="region"
+          aria-label="Mobile navigation"
+        >
+          <div className="flex flex-col space-y-4 px-2 pt-2 pb-3">
+            <Link 
+              to="/" 
+              className="text-gray-800 dark:text-gray-100 hover:text-gray-900 dark:hover:text-white"
+              onClick={() => setShow(false)}
+            >
+              HOME
+            </Link>
+            <Link 
+              to="/jobs"
+              className="text-gray-800 dark:text-gray-100 hover:text-gray-900 dark:hover:text-white"
+              onClick={() => setShow(false)}
+            >
+              JOBS
+            </Link>
+            <Link 
+              to="/roadmaps"
+              className="text-gray-800 dark:text-gray-100 hover:text-gray-900 dark:hover:text-white"
+              onClick={() => setShow(false)}
+            >
+              ROADMAPS
+            </Link>
+            <Link 
+              to="/courses"
+              className="text-gray-800 dark:text-gray-100 hover:text-gray-900 dark:hover:text-white"
+              onClick={() => setShow(false)}
+            >
+              COURSES
+            </Link>
+            <Link 
+              to="/quizzes"
+              className="text-gray-800 dark:text-gray-100 hover:text-gray-900 dark:hover:text-white"
+              onClick={() => setShow(false)}
+            >
+              QUIZZES
+            </Link>
+            
+            {isAuthenticated ? (
               <Link 
-                to="/" 
-                className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                to="/dashboard"
+                className="text-gray-800 dark:text-gray-100 hover:text-gray-900 dark:hover:text-white"
                 onClick={() => setShow(false)}
               >
-                HOME
+                DASHBOARD
               </Link>
+            ) : (
               <Link 
-                to="/jobs"
-                className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                to="/login"
+                className="text-gray-800 dark:text-gray-100 hover:text-gray-900 dark:hover:text-white"
                 onClick={() => setShow(false)}
               >
-                JOBS
+                LOGIN
               </Link>
-              <Link 
-                  to="/roadmaps"
-                  className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                  onClick={() => setShow(false)}
-                >
-                  ROADMAPS
-                </Link>
-                <Link 
-                  to="/courses"
-                  className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                  onClick={() => setShow(false)}
-                >
-                  COURSES
-                </Link>
-                <Link 
-                  to="/quizzes"
-                  className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                  onClick={() => setShow(false)}
-                >
-                  QUIZZES
-                </Link>
-                
-                {/* <Link 
-                  to="/posts"
-                  className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                  onClick={() => setShow(false)}
-                >
-                  Blog
-                </Link> */} 
-              {isAuthenticated ? (
-                <><Link 
-                  to="/dashboard"
-                  className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                  onClick={() => setShow(false)}
-                >
-                  DASHBOARD
-                </Link>
-              
-                </>
-              ) : (
-                <Link 
-                  to="/login"
-                  className="text-gray-700 dark:text-gray-200 hover:text-gray900 dark:hover:text-white"
-                  onClick={() => setShow(false)}
-                >
-                  LOGIN
-                </Link>
-              )}
-            </div>
+            )}
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
